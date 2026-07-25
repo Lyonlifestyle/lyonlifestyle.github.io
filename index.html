@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lyon LifeStyle</title>
+<title>Sport Life</title>
 <link rel="icon" type="image/png" sizes="180x180" href="favicon-180.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,18 @@
     background-color: #000000;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+  }
+
+  .marca-agua-lateral {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 70vh;
+    width: auto;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
   }
 
   /* ===== RESPONSIVE PC ===== */
@@ -358,6 +370,8 @@
 </head>
 <body>
 
+<img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
+
 <!-- ===== HEADER ===== -->
 <div class="header-nuevo">
   <button class="menu-btn" onclick="abrirMenu()">
@@ -370,10 +384,10 @@
 
   <div class="logo-centro">
     <div class="logo-fila">
-      <span class="logo-texto"><span class="sport">LIFE</span><span class="life">STYLE</span></span>
+      <span class="logo-texto"><span class="sport">SPORT</span><span class="life">LIFE</span></span>
       <img src="logo-leon.png" class="logo-icono" alt="Sport Life logo">
     </div>
-    <div class="logo-slogan">La forma de vivir un estilo de vida</div>
+    <div class="logo-slogan">Más que deporte, es un estilo de vida</div>
   </div>
 
   <a href="#" class="search-btn" onclick="abrirBuscador(); return false;">
@@ -529,7 +543,7 @@
       <div class="price">$20</div>
     </div>
   </div>
-  <div class="card" onclick="location.href='Pag2_PC_Optimizada.html'">
+  <div class="card" onclick="location.href='Pag2PC.html'">
     <div class="exclusive">NEW</div>
     <img src="Portadas/RopaBeisbol.png" class="img-skeleton" alt="Camiseta Toronto Blue Jays">
     <div class="info">

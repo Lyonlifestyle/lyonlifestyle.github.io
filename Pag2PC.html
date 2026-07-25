@@ -15,6 +15,41 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+/* Skeleton loading */
+.img-skeleton {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+.img-cargada { animation: none; background: none; }
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Marca de agua */
+.marca-agua-lateral {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: auto;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.breadcrumb{
+  position: relative;
+  z-index: 1;
+  padding:14px 20px 0;
+  font-size:13px;
+  color:#777;
+}
+.breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
+.breadcrumb span{ color:#999; }
+
 /* HEADER */
 
 .header{
@@ -250,11 +285,13 @@ padding:25px;
 </head>
 <body>
 
+<img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
+
 <!-- HEADER -->
 
 <div class="header">
 
-<a href="Pag1.html" class="back" onclick="volverInicio(Pag1.html); return false;">
+<a href="Pag1.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
 stroke="black"
@@ -271,9 +308,13 @@ Toronto Blue Jays
 </div>
 </div>
 
-<a href="Index.html" class="search">🏠</a>
+<a href="index.html" class="search">🏠</a>
 
 </div>
+
+<nav class="breadcrumb">
+  <a href="index.html">Inicio</a> › <a href="Pag1.html">Béisbol</a> › <span>Toronto Blue Jays</span>
+</nav>
 
 <!-- FOTO GRANDE -->
 
@@ -282,19 +323,19 @@ Toronto Blue Jays
 <div class="slider" id="slider">
 
 <div class="slide">
-<img src="Beisbol/Toronto.jpg" onclick="expandir(this.src)">
+<img src="Beisbol/Toronto.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 
 <div class="slide">
-<img src="Beisbol/BJ.jpg" onclick="expandir(this.src)">
+<img src="Beisbol/BJ.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 
 <div class="slide">
-<img src="Beisbol/Bluejays.jpg" onclick="expandir(this.src)">
+<img src="Beisbol/Bluejays.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div> 
  
 <div class="slide">
-<img src="imagenes/PR3.jpg" onclick="expandir(this.src)">
+<img src="imagenes/PR3.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 
 </div>
@@ -329,12 +370,6 @@ $40.00
 <h3>Tallas</h3>
 
 <div class="tallas">
-
-<!--<div class="talla"></div>
-
-<div class="talla">XL</div>
-
-<div class="talla"></div>-->
 
 <div class="talla">XL</div>
 
@@ -375,19 +410,18 @@ urbano ideal para uso diario.
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="Pedri.html" class="item-relacionado">
-      <img src="Futbol/pedri.jpg">
-      <span>Pedri</span>
+    <a href="producto2.html" class="item-relacionado">
+      <img src="img/gorra2.jpg" class="img-skeleton">
+      <span>Gorra Toronto Mesh Green</span>
     </a>
-    
-      <a href="messi.html" class="item-relacionado">
-      <img src="Futbol/messi10.jpg">
-      <span>Pedri</span>
-      
-      <a href="messi.html" class="item-relacionado">
-      <img src="Futbol/Barcelona.jpg">
-      <span>Pedri</span>
-    <!-- Agrega más productos aquí -->
+    <a href="producto3.html" class="item-relacionado">
+      <img src="img/gorra3.jpg" class="img-skeleton">
+      <span>Gorra Toronto Cream</span>
+    </a>
+    <a href="producto4.html" class="item-relacionado">
+      <img src="img/gorra4.jpg" class="img-skeleton">
+      <span>Gorra Toronto Edición Limitada</span>
+    </a>
   </div>
 </div>
 <footer>
@@ -429,10 +463,9 @@ function cerrarModal(){
 document.getElementById("modal").style.display="none";
 
 }
-
-function volverInicio(){
-window.location.replace("Index.html");
-}
 </script>
+
+<script src="skeleton.js"></script>
+
 </body>
 </html>
