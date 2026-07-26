@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Díaz - Bayern Múnich - Lyon Lifestyle</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+.img-skeleton {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+.img-cargada { animation: none; background: none; }
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.marca-agua-lateral {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: auto;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.breadcrumb{
+  position: relative;
+  z-index: 1;
+  padding:14px 20px 0;
+  font-size:13px;
+  color:#777;
+}
+.breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
+.breadcrumb span{ color:#999; }
+
+.header{
+position:sticky;
+top:0;
+background:#fff;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 15px;
+border-bottom:1px solid #ddd;
+z-index:1000;
+}
+
+.back,
+.search{
+font-size:28px;
+text-decoration:none;
+color:black;
+}
+
+.titulo{
+text-align:center;
+flex:1;
+}
+
+.tienda{
+font-size:22px;
+font-weight:bold;
+}
+
+.producto-header{
+font-size:13px;
+color:#666;
+}
+
+.slider{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+}
+
+.slider::-webkit-scrollbar{
+display:none;
+}
+
+.slide{
+min-width:100%;
+scroll-snap-align:start;
+}
+
+.slide img{
+width:100%;
+display:block;
+cursor:pointer;
+}
+
+.miniaturas{
+display:flex;
+overflow-x:auto;
+gap:10px;
+padding:10px;
+}
+
+.miniaturas::-webkit-scrollbar{
+display:none;
+}
+
+.miniaturas img{
+width:80px;
+height:80px;
+object-fit:cover;
+border:2px solid #ddd;
+border-radius:5px;
+cursor:pointer;
+}
+
+.info{
+padding:20px;
+}
+
+.modelo{
+font-size:25px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.precio{
+font-size:25px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.tallas{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.talla{
+padding:10px 20px;
+border:1px solid #000;
+border-radius:5px;
+cursor:pointer;
+}
+
+.descripcion{
+line-height:1.6;
+color:#555;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal img{
+max-width:100%;
+max-height:100%;
+}
+
+.cerrar{
+position:absolute;
+top:20px;
+right:20px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.btn-whatsapp{
+display:block;
+width:100%;
+background:#25D366;
+color:white;
+text-align:center;
+padding:16px;
+margin-top:25px;
+border-radius:8px;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn-whatsapp:hover{
+transform:scale(1.02);
+}
+
+@media (min-width:992px){
+.producto-pc{display:flex;gap:50px;max-width:1400px;margin:40px auto;align-items:flex-start;padding:0 30px;}
+.galeria{flex:1;position:sticky;top:90px;}
+.info{flex:1;padding:0;}
+.slide{display:flex;justify-content:center;align-items:center;background:#f5f5f5;border-radius:12px;}
+.slide img{width:100%;max-width:700px;max-height:700px;object-fit:contain;}
+.miniaturas{justify-content:center;}
+.modelo{font-size:34px;}
+.precio{font-size:32px;}
+.btn-whatsapp{max-width:420px;}
+}
+
+.relacionados {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.titulo-relacionados {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #D4AF37;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.grid-relacionados {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.item-relacionado {
+  flex: 0 0 auto;
+  width: 120px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.item-relacionado img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #D4AF37;
+  margin-bottom: 6px;
+}
+
+footer{
+margin-top:40px;
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+margin:16px 0;
+}
+
+.footer-links a{
+color:#ccc;
+text-decoration:none;
+font-size:12px;
+}
+
+.footer-links a:hover{
+color:#D4AF37;
+}
+
+.footer-redes{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-bottom:16px;
+}
+
+.footer-redes a{
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid #D4AF37;
+color:#D4AF37;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:14px;
+}
+
+.whatsapp-flotante{
+position:fixed;
+bottom:20px;
+right:20px;
+width:55px;
+height:55px;
+background-color:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.4);
+z-index:999;
+transition:transform .2s ease;
+}
+
+.whatsapp-flotante:hover{
+transform:scale(1.1);
+}
+
+</style>
+</head>
+<body>
+
+<img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
+
+<div class="header">
+
+<a href="Futbol.html" class="back">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+<path d="M15 18L9 12L15 6"
+stroke="black"
+stroke-width="2.5"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+</a>
+
+<div class="titulo">
+<div class="tienda">LYON LIFESTYLE</div>
+<div class="producto-header">
+Bayern Múnich
+</div>
+</div>
+
+<a href="index.html" class="search">🏠</a>
+
+</div>
+
+<nav class="breadcrumb">
+  <a href="index.html">Inicio</a> › <a href="Futbol.html">Fútbol</a> › <span>Luis Díaz</span>
+</nav>
+
+<div class="producto-pc">
+<div class="galeria">
+<div class="slider" id="slider">
+<div class="slide">
+<img src="Futbol/Bayern/luisdiaz-back.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Futbol/Bayern/front-generic.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Futbol/Bayern/crest.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Futbol/Bayern/allianz-patch.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Futbol/Bayern/tmobile-logo.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+</div>
+
+<div class="miniaturas">
+<img src="Futbol/Bayern/luisdiaz-back.jpg" onclick="irFoto(0)">
+<img src="Futbol/Bayern/front-generic.jpg" onclick="irFoto(1)">
+<img src="Futbol/Bayern/crest.jpg" onclick="irFoto(2)">
+<img src="Futbol/Bayern/allianz-patch.jpg" onclick="irFoto(3)">
+<img src="Futbol/Bayern/tmobile-logo.jpg" onclick="irFoto(4)">
+</div>
+
+</div>
+<div class="info">
+
+<div class="modelo">
+FC Bayern - Luis Díaz #14
+</div>
+
+<div class="precio">
+$20.00
+</div>
+
+<h3>Tallas</h3>
+
+<div class="tallas">
+<div class="talla">S</div>
+<div class="talla">M</div>
+<div class="talla">L</div>
+<div class="talla">XL</div>
+</div>
+
+<a
+href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Luis%20D%C3%ADaz%20Bayern%20M%C3%BAnich"
+class="btn-whatsapp">
+
+🛒 Comprar por WhatsApp
+
+</a>
+
+<div class="descripcion">
+Camiseta oficial FC Bayern Múnich, versión Luis Díaz #14. Material premium, ajuste cómodo y diseño urbano ideal para uso diario.
+</div>
+
+</div>
+</div>
+
+<div class="modal" id="modal">
+<span class="cerrar" onclick="cerrarModal()">×</span>
+<img id="imagenExpandida">
+</div>
+
+<div class="relacionados">
+  <h3 class="titulo-relacionados">También te puede interesar</h3>
+  <div class="grid-relacionados">
+    <a href="bayern-kane.html" class="item-relacionado">
+      <img src="Futbol/Bayern/kane-back.jpg" class="img-skeleton">
+      <span>Kane</span>
+    </a>
+    <a href="realmadrid-vinijr.html" class="item-relacionado">
+      <img src="Futbol/RealMadrid/vinijr-back.jpg" class="img-skeleton">
+      <span>Vini Jr. - Real Madrid</span>
+    </a>
+    <a href="barcelona-lamineyamal.html" class="item-relacionado">
+      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
+      <span>Lamine Yamal - Barcelona</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+
+<h3>LYON LIFESTYLE</h3>
+
+<p>
+Accesorios Deportivos • Gorras • Perfumes • Fitness
+</p>
+
+<div class="footer-links">
+  <a href="envios.html">Envíos</a>
+  <a href="cambios.html">Cambios y devoluciones</a>
+  <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+  <a href="guia-tallas.html">Guía de tallas</a>
+</div>
+
+<div class="footer-redes">
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+  <a href="https://instagram.com/lyonlife.style" target="_blank" aria-label="Instagram">📸</a>
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube">▶️</a>
+  <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+</div>
+
+<p>
+© 2026 Todos los derechos reservados
+</p>
+
+</footer>
+
+<a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
+
+<script>
+
+function irFoto(numero){
+document.getElementById("slider").scrollTo({
+left: numero * window.innerWidth,
+behavior:"smooth"
+});
+}
+
+function expandir(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("imagenExpandida").src=src;
+}
+
+function cerrarModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+<script src="skeleton.js"></script>
+
+</body>
+</html>
