@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Futbol jerseys</title>
+<title>Otros - Sport Life</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -60,23 +60,13 @@ border-radius:25px;
 font-size:16px;
 }
 
-/* Skeleton */
+/* Skeleton loading */
 .img-skeleton {
-  background: linear-gradient(
-    90deg,
-    #1a1a1a 25%,
-    #2a2a2a 50%,
-    #1a1a1a 75%
-  );
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
 }
-
-.img-cargada {
-  animation: none;
-  background: none;
-}
-
+.img-cargada { animation: none; background: none; }
 @keyframes skeleton-loading {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
@@ -95,6 +85,7 @@ font-size:16px;
   pointer-events: none;
 }
 
+/* Filtros */
 .filtros{
 display:flex;
 gap:8px;
@@ -120,23 +111,17 @@ color:white;
 border-color:#111;
 }
 
-/* CONTADOR */
+/* CONTADOR / BREADCRUMB */
 
 .breadcrumb{
+position:relative;
+z-index:1;
 padding:14px 20px 0;
 font-size:13px;
 color:#777;
 }
-
-.breadcrumb a{
-color:#111;
-text-decoration:none;
-font-weight:600;
-}
-
-.breadcrumb span{
-color:#999;
-}
+.breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
+.breadcrumb span{ color:#999; }
 
 .count-orden{
 display:flex;
@@ -155,19 +140,6 @@ background:white;
 color:#111;
 }
 
-.stock-bajo{
-position:absolute;
-bottom:10px;
-right:10px;
-background:#c0392b;
-color:white;
-padding:5px 10px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-z-index:2;
-}
-
 .count{
 padding:0;
 font-size:20px;
@@ -177,6 +149,8 @@ font-weight:bold;
 /* GRID */
 
 .products{
+position:relative;
+z-index:1;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
@@ -184,7 +158,6 @@ padding:10px;
 }
 
 @media(min-width:900px){
-
 .products{
 grid-template-columns:repeat(4,1fr);
 }
@@ -228,6 +201,19 @@ font-weight:bold;
 z-index:2;
 }
 
+.stock-bajo{
+position:absolute;
+bottom:10px;
+right:10px;
+background:#c0392b;
+color:white;
+padding:5px 10px;
+border-radius:5px;
+font-size:11px;
+font-weight:bold;
+z-index:2;
+}
+
 .info{
 padding:10px 5px;
 }
@@ -248,12 +234,6 @@ margin-bottom:8px;
 font-size:24px;
 font-weight:bold;
 }
-
-.talla{
-  font-size:24px;
-  font-weight:bold;
-}
-
 
 /* FOOTER */
 
@@ -341,7 +321,7 @@ onclick="window.location.replace('index.html')">
 </a>
 
 <div class="title">
-JERSEY DE FUTBOL
+OTROS PRODUCTOS
 </div>
 
 <a href="index.html" class="home-btn">
@@ -359,17 +339,15 @@ onkeyup="searchProducts()">
 
 <div class="filtros">
   <button class="filtro-chip activo" onclick="filtrarPor('todos', this)">Todos</button>
-  <button class="filtro-chip" onclick="filtrarPor('real madrid', this)">Real Madrid</button>
-  <button class="filtro-chip" onclick="filtrarPor('barcelona', this)">Barcelona</button>
-  <button class="filtro-chip" onclick="filtrarPor('españa', this)">España</button>
   <button class="filtro-chip" onclick="filtrarPor('exclusive', this)">Exclusivos</button>
   <button class="filtro-chip" onclick="filtrarPor('off', this)">En oferta</button>
+  <!-- Agrega más chips de filtro aquí si los necesitas, ej: <button class="filtro-chip" onclick="filtrarPor('palabra', this)">Nombre</button> -->
 </div>
 
 </header>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <span>Fútbol</span>
+  <a href="index.html">Inicio</a> › <span>Otros</span>
 </nav>
 
 <div class="count-orden">
@@ -383,27 +361,35 @@ onkeyup="searchProducts()">
   </select>
 </div>
 
+<!-- ======================================================
+     SECCIÓN DE PRODUCTOS
+     Cada tarjeta .card es un producto. Para agregar uno nuevo,
+     copia un bloque completo <div class="card">...</div> y pega
+     debajo, cambiando: la foto, la marca, el nombre, el precio,
+     el link (onclick) y el precio en data-precio.
+     ====================================================== -->
+
 <section class="products" id="gridProductos">
 
 <div class="card" data-precio="20"
-onclick="location.href='CR7.html'">
+onclick="location.href='producto1.html'">
 
 <div class="img-wrap">
 <div class="exclusive">
 EXCLUSIVE
 </div>
 
-<img src="Cr7.png" class="img-skeleton">
+<img src="RUTA-DE-TU-FOTO-1.jpg" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Cristiano Ronaldo
+MARCA / EQUIPO
 </div>
 
 <div class="name">
-"Black Panter" Edition
+Nombre del producto
 </div>
 
 <div class="price">
@@ -415,86 +401,20 @@ $20
 </div>
 
 <div class="card" data-precio="20"
-onclick="location.href='Pedri.html'">
+onclick="location.href='producto2.html'">
 
 <div class="img-wrap">
-<div class="exclusive">
-EXCLUSIVE
-</div>
-
-<div class="stock-bajo">
-Últimas unidades
-</div>
-
-<img src="Futbol/Pedri.jpg" class="img-skeleton">
+<img src="RUTA-DE-TU-FOTO-2.jpg" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Pedri
+MARCA / EQUIPO
 </div>
 
 <div class="name">
-España Seleccion
-</div>
-
-<div class="price">
-$20
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='producto3.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-20 % off
-</div>
-
-<img src="Futbol/Barcelonagris.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Lamine Yamal
-</div>
-
-<div class="name">
-FC Barcelona
-</div>
-
-<div class="price">
-$20
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='producto4.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-EXCLUSIVE
-</div>
-
-<img src="Futbol/Barcelona.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Lamine Yamal
-</div>
-
-<div class="name">
-FC Barcelona
+Nombre del producto
 </div>
 
 <div class="price">
