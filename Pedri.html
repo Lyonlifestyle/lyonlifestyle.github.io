@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sport Life</title>
+<title>Pedri - España - Lyon Lifestyle</title>
+<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -14,7 +15,38 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-/* HEADER */
+.img-skeleton {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+.img-cargada { animation: none; background: none; }
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.marca-agua-lateral {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: auto;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.breadcrumb{
+  position: relative;
+  z-index: 1;
+  padding:14px 20px 0;
+  font-size:13px;
+  color:#777;
+}
+.breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
+.breadcrumb span{ color:#999; }
 
 .header{
 position:sticky;
@@ -51,8 +83,6 @@ font-size:13px;
 color:#666;
 }
 
-/* GALERIA */
-
 .slider{
 display:flex;
 overflow-x:auto;
@@ -67,21 +97,25 @@ display:none;
 .slide{
 min-width:100%;
 scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .slide img{
 width:100%;
+max-height:62vh;
+object-fit:contain;
+background:#f5f5f5;
 display:block;
 cursor:pointer;
 }
 
-/* MINIATURAS */
-
 .miniaturas{
 display:flex;
 overflow-x:auto;
-gap:10px;
-padding:10px;
+gap:8px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -89,30 +123,29 @@ display:none;
 }
 
 .miniaturas img{
-width:80px;
-height:80px;
+width:64px;
+height:64px;
 object-fit:cover;
 border:2px solid #ddd;
 border-radius:5px;
 cursor:pointer;
 }
 
-/* INFORMACION */
-
 .info{
-padding:20px;
+padding:10px 20px 20px;
 }
 
 .modelo{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:10px;
+margin-bottom:6px;
+margin-top:4px;
 }
 
 .precio{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:20px;
+margin-bottom:12px;
 }
 
 .tallas{
@@ -133,8 +166,6 @@ cursor:pointer;
 line-height:1.6;
 color:#555;
 }
-
-/* PANTALLA COMPLETA */
 
 .modal{
 display:none;
@@ -182,15 +213,133 @@ transition:0.3s;
 transform:scale(1.02);
 }
 
+@media (min-width:992px){
+.producto-pc{display:flex;gap:50px;max-width:1400px;margin:40px auto;align-items:flex-start;padding:0 30px;}
+.galeria{flex:1;position:sticky;top:90px;}
+.info{flex:1;padding:0;}
+.slide{background:#f5f5f5;border-radius:12px;}
+.slide img{width:100%;max-width:700px;max-height:700px;object-fit:contain;}
+.miniaturas{justify-content:center;}
+.modelo{font-size:34px;}
+.precio{font-size:32px;}
+.btn-whatsapp{max-width:420px;}
+}
+
+.relacionados {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.titulo-relacionados {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #D4AF37;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.grid-relacionados {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.item-relacionado {
+  flex: 0 0 auto;
+  width: 120px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.item-relacionado img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #D4AF37;
+  margin-bottom: 6px;
+}
+
+footer{
+margin-top:40px;
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+margin:16px 0;
+}
+
+.footer-links a{
+color:#ccc;
+text-decoration:none;
+font-size:12px;
+}
+
+.footer-links a:hover{
+color:#D4AF37;
+}
+
+.footer-redes{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-bottom:16px;
+}
+
+.footer-redes a{
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid #D4AF37;
+color:#D4AF37;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:14px;
+}
+
+.whatsapp-flotante{
+position:fixed;
+bottom:20px;
+right:20px;
+width:55px;
+height:55px;
+background-color:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.4);
+z-index:999;
+transition:transform .2s ease;
+}
+
+.whatsapp-flotante:hover{
+transform:scale(1.1);
+}
+
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
 
 <div class="header">
 
-<a href="Futbol.html" class="back" onclick="volver(); return false;">
+<a href="Futbol.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
 stroke="black"
@@ -201,58 +350,49 @@ stroke-linejoin="round"/>
 </a>
 
 <div class="titulo">
-<div class="tienda">SPORT LIFE</div>
+<div class="tienda">LYON LIFESTYLE</div>
 <div class="producto-header">
-Pedri
+Selección España
 </div>
 </div>
 
-<a href="Index.html" class="search">🏠</a>
+<a href="index.html" class="search">🏠</a>
 
 </div>
 
-<!-- FOTO GRANDE -->
+<nav class="breadcrumb">
+  <a href="index.html">Inicio</a> › <a href="Futbol.html">Fútbol</a> › <span>Pedri</span>
+</nav>
 
+<div class="producto-pc">
+<div class="galeria">
 <div class="slider" id="slider">
-
 <div class="slide">
-<img src="Futbol/Pedri.jpg" onclick="expandir(this.src)">
+<img src="Futbol/Pedri.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
-
 <div class="slide">
-<img src="Futbol/Pedridorsal.jpg" onclick="expandir(this.src)">
+<img src="Futbol/Pedridorsal.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
-
 <div class="slide">
-<img src="Futbol/Pedrinumero.jpg" onclick="expandir(this.src)">
-</div> 
- 
+<img src="Futbol/Pedrinumero.jpg" class="img-skeleton" onclick="expandir(this.src)">
+</div>
 <div class="slide">
-<img src="Futbol/Pedrieacudo.jpg" onclick="expandir(this.src)">
+<img src="Futbol/Pedrieacudo.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
-
 </div>
-
-<!-- MINIATURAS -->
 
 <div class="miniaturas">
-
 <img src="Futbol/Pedri.jpg" onclick="irFoto(0)">
-
 <img src="Futbol/Pedridorsal.jpg" onclick="irFoto(1)">
-
 <img src="Futbol/Pedrinumero.jpg" onclick="irFoto(2)">
-
 <img src="Futbol/Pedrieacudo.jpg" onclick="irFoto(3)">
-
 </div>
 
-<!-- INFORMACION -->
-
+</div>
 <div class="info">
 
 <div class="modelo">
-Pedri España Alternativa
+Pedri - España Alternativa
 </div>
 
 <div class="precio">
@@ -262,19 +402,14 @@ $20.00
 <h3>Tallas</h3>
 
 <div class="tallas">
-
-<!--<div class="talla"></div>
-
+<div class="talla">S</div>
+<div class="talla">M</div>
+<div class="talla">L</div>
 <div class="talla">XL</div>
-
-<div class="talla"></div>-->
-
-<div class="talla">XL</div>
-
 </div>
 
 <a
-href="https://wa.me/5363199003?text=Hola,%20estoy%20interesado%20en%20la%20camisa%20de%20CR7%2059FIFTY"
+href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Pedri%20Espa%C3%B1a"
 class="btn-whatsapp">
 
 🛒 Comprar por WhatsApp
@@ -282,56 +417,85 @@ class="btn-whatsapp">
 </a>
 
 <div class="descripcion">
-
-Pulover oficial estilo deportivo.
-Material premium, ajuste cómodo y diseño
-urbano ideal para uso diario.
-
-</div000000p00p
-
+Camiseta oficial estilo selección de España, versión Pedri. Material premium, ajuste cómodo y diseño urbano ideal para uso diario.
 </div>
 
-<!-- MODAL -->
+</div>
+</div>
 
 <div class="modal" id="modal">
-
-<span class="cerrar" onclick="cerrarModal()">
-×
-</span>
-
-<img id="imagenExpandid11a">
-
+<span class="cerrar" onclick="cerrarModal()">×</span>
+<img id="imagenExpandida">
 </div>
+
+<div class="relacionados">
+  <h3 class="titulo-relacionados">También te puede interesar</h3>
+  <div class="grid-relacionados">
+    <a href="CR7.html" class="item-relacionado">
+      <img src="Cr7.png" class="img-skeleton">
+      <span>Cristiano Ronaldo</span>
+    </a>
+    <a href="barcelona-lamineyamal.html" class="item-relacionado">
+      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
+      <span>Lamine Yamal - Barcelona</span>
+    </a>
+    <a href="realmadrid-vinijr.html" class="item-relacionado">
+      <img src="Futbol/RealMadrid/vinijr-back.jpg" class="img-skeleton">
+      <span>Vini Jr. - Real Madrid</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+
+<h3>LYON LIFESTYLE</h3>
+
+<p>
+Accesorios Deportivos • Gorras • Perfumes • Fitness
+</p>
+
+<div class="footer-links">
+  <a href="envios.html">Envíos</a>
+  <a href="cambios.html">Cambios y devoluciones</a>
+  <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+  <a href="guia-tallas.html">Guía de tallas</a>
+</div>
+
+<div class="footer-redes">
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+  <a href="https://instagram.com/lyonlife.style" target="_blank" aria-label="Instagram">📸</a>
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube">▶️</a>
+  <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+</div>
+
+<p>
+© 2026 Todos los derechos reservados
+</p>
+
+</footer>
+
+<a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
 
 function irFoto(numero){
-
-document.getElementById("slider")
-.scrollTo({
+document.getElementById("slider").scrollTo({
 left: numero * window.innerWidth,
 behavior:"smooth"
 });
-
 }
 
 function expandir(src){
-
 document.getElementById("modal").style.display="flex";
-
 document.getElementById("imagenExpandida").src=src;
-
 }
 
 function cerrarModal(){
-
 document.getElementById("modal").style.display="none";
-
-}
-
-function volverInicio(){
-window.location.replace("Gorraprincipal.html");
 }
 </script>
+
+<script src="skeleton.js"></script>
+
 </body>
 </html>

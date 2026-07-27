@@ -97,10 +97,16 @@ display:none;
 .slide{
 min-width:100%;
 scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .slide img{
 width:100%;
+max-height:62vh;
+object-fit:contain;
+background:#f5f5f5;
 display:block;
 cursor:pointer;
 }
@@ -108,8 +114,8 @@ cursor:pointer;
 .miniaturas{
 display:flex;
 overflow-x:auto;
-gap:10px;
-padding:10px;
+gap:8px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -117,8 +123,8 @@ display:none;
 }
 
 .miniaturas img{
-width:80px;
-height:80px;
+width:64px;
+height:64px;
 object-fit:cover;
 border:2px solid #ddd;
 border-radius:5px;
@@ -126,19 +132,20 @@ cursor:pointer;
 }
 
 .info{
-padding:20px;
+padding:10px 20px 20px;
 }
 
 .modelo{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:10px;
+margin-bottom:6px;
+margin-top:4px;
 }
 
 .precio{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:20px;
+margin-bottom:12px;
 }
 
 .tallas{
@@ -361,13 +368,13 @@ FC Barcelona
 <div class="galeria">
 <div class="slider" id="slider">
 <div class="slide">
-<img src="Futbol/Barcelona/lamineyamal-back.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Futbol/Barcelona/front-generic.jpg" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Futbol/Barcelona/lamineyamal-front.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Futbol/Barcelona/crest.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Futbol/Barcelona/crest.jpg" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
 <img src="Futbol/Barcelona/cl-badge.jpg" class="img-skeleton" onclick="expandir(this.src)">
@@ -378,9 +385,9 @@ FC Barcelona
 </div>
 
 <div class="miniaturas">
-<img src="Futbol/Barcelona/lamineyamal-back.png" onclick="irFoto(0)">
-<img src="Futbol/Barcelona/front-generic.jpg" onclick="irFoto(1)">
-<img src="Futbol/Barcelona/crest.png" onclick="irFoto(2)">
+<img src="Futbol/Barcelona/lamineyamal-back.jpg" onclick="irFoto(0)">
+<img src="Futbol/Barcelona/lamineyamal-front.jpg" onclick="irFoto(1)">
+<img src="Futbol/Barcelona/crest.jpg" onclick="irFoto(2)">
 <img src="Futbol/Barcelona/cl-badge.jpg" onclick="irFoto(3)">
 <img src="Futbol/Barcelona/retro-midea.jpg" onclick="irFoto(4)">
 </div>
@@ -428,16 +435,16 @@ Camiseta oficial FC Barcelona, versión Lamine Yamal #10. Material premium, ajus
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="raphinha.html" class="item-relacionado">
-      <img src="Futbol/raphinha.jpg" class="img-skeleton">
+    <a href="lamine-barcelona.html" class="item-relacionado">
+      <img src="Futbol/Barcelona.jpg" class="img-skeleton">
       <span>Lamine Yamal (otra versión)</span>
     </a>
     <a href="realmadrid-vinijr.html" class="item-relacionado">
-      <img src="Futbol/RealMadrid/vinijr-back.png" class="img-skeleton">
+      <img src="Futbol/RealMadrid/vinijr-back.jpg" class="img-skeleton">
       <span>Vini Jr. - Real Madrid</span>
     </a>
     <a href="bayern-kane.html" class="item-relacionado">
-      <img src="Futbol/Bayern/kane-back.png" class="img-skeleton">
+      <img src="Futbol/Bayern/kane-back.jpg" class="img-skeleton">
       <span>Kane - Bayern</span>
     </a>
   </div>

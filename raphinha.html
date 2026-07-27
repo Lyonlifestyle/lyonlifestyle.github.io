@@ -97,10 +97,16 @@ display:none;
 .slide{
 min-width:100%;
 scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .slide img{
 width:100%;
+max-height:62vh;
+object-fit:contain;
+background:#f5f5f5;
 display:block;
 cursor:pointer;
 }
@@ -108,8 +114,8 @@ cursor:pointer;
 .miniaturas{
 display:flex;
 overflow-x:auto;
-gap:10px;
-padding:10px;
+gap:8px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -117,8 +123,8 @@ display:none;
 }
 
 .miniaturas img{
-width:80px;
-height:80px;
+width:64px;
+height:64px;
 object-fit:cover;
 border:2px solid #ddd;
 border-radius:5px;
@@ -126,19 +132,20 @@ cursor:pointer;
 }
 
 .info{
-padding:20px;
+padding:10px 20px 20px;
 }
 
 .modelo{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:10px;
+margin-bottom:6px;
+margin-top:4px;
 }
 
 .precio{
-font-size:25px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:20px;
+margin-bottom:12px;
 }
 
 .tallas{
@@ -382,7 +389,7 @@ FC Barcelona
 <img src="Futbol/Barcelona/front-generic.jpg" onclick="irFoto(1)">
 <img src="Futbol/Barcelona/crest.png" onclick="irFoto(2)">
 <img src="Futbol/Barcelona/cl-badge.jpg" onclick="irFoto(3)">
-<!---<img src="Futbol/Barcelona/retro-midea.jpg" onclick="irFoto(4)"> --->
+<img src="Futbol/Barcelona/retro-midea.jpg" onclick="irFoto(4)">
 </div>
 
 </div>
@@ -428,16 +435,16 @@ Camiseta oficial FC Barcelona, version Raphinha #11. Material premium, ajuste c�
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="raphinha.html" class="item-relacionado">
-      <img src="Futbol/lamineyamal-back.jpg" class="img-skeleton">
-      <span>Lamine Yamal (otra versión)</span>
+    <a href="barcelona-lamineyamal.html" class="item-relacionado">
+      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
+      <span>Lamine Yamal - Barcelona</span>
     </a>
     <a href="realmadrid-vinijr.html" class="item-relacionado">
-      <img src="Futbol/RealMadrid/vinijr-back.png" class="img-skeleton">
+      <img src="Futbol/RealMadrid/vinijr-back.jpg" class="img-skeleton">
       <span>Vini Jr. - Real Madrid</span>
     </a>
     <a href="bayern-kane.html" class="item-relacionado">
-      <img src="Futbol/Bayern/kane-back.png" class="img-skeleton">
+      <img src="Futbol/Bayern/kane-back.jpg" class="img-skeleton">
       <span>Kane - Bayern</span>
     </a>
   </div>
