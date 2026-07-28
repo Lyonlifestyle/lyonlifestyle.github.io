@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Futbol jerseys</title>
+<title>Baseball jerseys</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -60,7 +60,7 @@ border-radius:25px;
 font-size:16px;
 }
 
-/* Skeleton */
+/* Skeleton loading */
 .img-skeleton {
   background: linear-gradient(
     90deg,
@@ -95,6 +95,7 @@ font-size:16px;
   pointer-events: none;
 }
 
+/* Filtros */
 .filtros{
 display:flex;
 gap:8px;
@@ -155,19 +156,6 @@ background:white;
 color:#111;
 }
 
-.stock-bajo{
-position:absolute;
-bottom:10px;
-right:10px;
-background:#c0392b;
-color:white;
-padding:5px 10px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-z-index:2;
-}
-
 .count{
 padding:0;
 font-size:20px;
@@ -188,6 +176,7 @@ padding:10px;
 .products{
 grid-template-columns:repeat(4,1fr);
 }
+
 }
 
 /* TARJETAS */
@@ -228,6 +217,19 @@ font-weight:bold;
 z-index:2;
 }
 
+.stock-bajo{
+position:absolute;
+bottom:10px;
+right:10px;
+background:#c0392b;
+color:white;
+padding:5px 10px;
+border-radius:5px;
+font-size:11px;
+font-weight:bold;
+z-index:2;
+}
+
 .info{
 padding:10px 5px;
 }
@@ -248,12 +250,6 @@ margin-bottom:8px;
 font-size:24px;
 font-weight:bold;
 }
-
-.talla{
-  font-size:24px;
-  font-weight:bold;
-}
-
 
 /* FOOTER */
 
@@ -341,7 +337,7 @@ onclick="window.location.replace('index.html')">
 </a>
 
 <div class="title">
-JERSEY DE FUTBOL
+CAMISAS DE BEISBOL
 </div>
 
 <a href="index.html" class="home-btn">
@@ -359,18 +355,15 @@ onkeyup="searchProducts()">
 
 <div class="filtros">
   <button class="filtro-chip activo" onclick="filtrarPor('todos', this)">Todos</button>
-  <button class="filtro-chip" onclick="filtrarPor('real madrid', this)">Real Madrid</button>
-  <button class="filtro-chip" onclick="filtrarPor('barcelona', this)">Barcelona</button>
-  <button class="filtro-chip" onclick="filtrarPor('bayern', this)">Bayern</button>
-  <button class="filtro-chip" onclick="filtrarPor('españa', this)">España</button>
+  <button class="filtro-chip" onclick="filtrarPor('jersey', this)">Jerseys</button>
+  <button class="filtro-chip" onclick="filtrarPor('cap', this)">Gorras</button>
   <button class="filtro-chip" onclick="filtrarPor('exclusive', this)">Exclusivos</button>
-  <button class="filtro-chip" onclick="filtrarPor('off', this)">En oferta</button>
 </div>
 
 </header>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <span>Fútbol</span>
+  <a href="index.html">Inicio</a> › <span>Béisbol</span>
 </nav>
 
 <div class="count-orden">
@@ -386,37 +379,8 @@ onkeyup="searchProducts()">
 
 <section class="products" id="gridProductos">
 
-<div class="card" data-precio="20"
-onclick="location.href='CR7.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-EXCLUSIVE
-</div>
-
-<img src="Cr7.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Cristiano Ronaldo
-</div>
-
-<div class="name">
-"Black Panter" Edition
-</div>
-
-<div class="price">
-$20
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='Pedri.html'">
+<div class="card" data-precio="40"
+onclick="location.href='Pag2PC.html'">
 
 <div class="img-wrap">
 <div class="exclusive">
@@ -427,225 +391,113 @@ EXCLUSIVE
 Últimas unidades
 </div>
 
-<img src="Futbol/Pedri.jpg" class="img-skeleton">
+<img src="Beisbol/Toronto.jpg" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Pedri
+9FORTY
 </div>
 
 <div class="name">
-España Seleccion
+Toronto Blue Jays MLB Jersey
 </div>
 
 <div class="price">
-$20
+$40
 </div>
 
 </div>
 
 </div>
 
-
-<div class="card" data-precio="20"
-onclick="location.href='raphinha.html'">
+<div class="card" data-precio="25"
+onclick="location.href='pujols.html'">
+  
 
 <div class="img-wrap">
 <div class="exclusive">
-
+NUEVO
 </div>
 
-<img src="Futbol/Barcelona/raphinha.png" class="img-skeleton">
+<div class="img-wrap">
+<img src="Beisbol/Angels/angels.png" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Raphinha
+Albert Pujols
 </div>
 
 <div class="name">
-FC Barcelona
+Angels
 </div>
 
 <div class="price">
-$20
+$25
 </div>
 
 </div>
 
 </div>
-
-
-<div class="card" data-precio="20"
-onclick="location.href='barcelon-lamineyamal.html'">
+<!--
+<div class="card" data-precio="40"
+onclick="location.href='gorra-toronto-cream.html'">
 
 <div class="img-wrap">
 <div class="exclusive">
-NEW
+EXCLUSIVE
 </div>
 
-<img src="Futbol/Barcelona/lamineyamal-back.png" class="img-skeleton">
+<img src="img/gorra3.jpg" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Lamine Yamal
+9FORTY
 </div>
 
 <div class="name">
-FC Barcelona
+Toronto Blue Jays Cream Adjustable Cap
 </div>
 
 <div class="price">
-$20
+$40
 </div>
 
 </div>
 
 </div>
 
-<div class="card" data-precio="20"
-onclick="location.href='Lamine.html'">
+<div class="card" data-precio="45"
+onclick="location.href='gorra-toronto-limitada.html'">
 
 <div class="img-wrap">
 <div class="exclusive">
-20% Off
+EXCLUSIVE
 </div>
 
-<img src="Futbol/Barcelona/yamal.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Lamine Yamal
-</div>
-
-<div class="name">
-FC Barcelona Temporada 2025
-</div>
-
-<div class="price">
-$18
-</div>
-
-</div>
-
-</div>
-<!-- BARCELONA -->
-<div class="card" data-precio="20"
-onclick="location.href='pedrib.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-20% Off
-</div>
-
-<img src="Futbol/Barcelona/pedribeige.png" class="img-skeleton">
+<img src="img/gorra4.jpg" class="img-skeleton">
 </div>
 
 <div class="info">
 
 <div class="brand">
-Pedri
+9FORTY
 </div>
 
 <div class="name">
-FC Barcelona Temporada 2025
+Toronto Blue Jays Limited Edition
 </div>
 
 <div class="price">
-$18
+$45
 </div>
-
+-->
 </div>
-</div>
-<!-- REAL MADRID -->
-
-<div class="card" data-precio="20"
-onclick="location.href='realmadrid-vinijr.html'">
-
-<div class="img-wrap">
-<img src="Futbol/RealMadrid/vinijr-back.png" class="img-skeleton">
-</div>
-
-<div class="info">
-<div class="brand">Real Madrid</div>
-<div class="name">Vini Jr. #7</div>
-<div class="price">$20</div>
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='realmadrid-bellingham.html'">
-
-<div class="img-wrap">
-<img src="Futbol/RealMadrid/bellingham.png" class="img-skeleton">
-</div>
-
-<div class="info">
-<div class="brand">Real Madrid</div>
-<div class="name">Bellingham #5</div>
-<div class="price">$20</div>
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='realmadrid-mbappe.html'">
-
-<div class="img-wrap">
-<div class="exclusive">EXCLUSIVE</div>
-<img src="Futbol/RealMadrid/mbappe-back.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-<div class="brand">Real Madrid</div>
-<div class="name">Mbappé #10</div>
-<div class="price">$20</div>
-</div>
-
-</div>
-
-<!-- BAYERN MÚNICH -->
-
-<div class="card" data-precio="20"
-onclick="location.href='bayern-kane.html'">
-
-<div class="img-wrap">
-<div class="exclusive">EXCLUSIVE</div>
-<img src="Futbol/Bayern/kane-back.png" class="img-skeleton">
-</div>
-
-<div class="info">
-<div class="brand">Bayern Múnich</div>
-<div class="name">Kane #9</div>
-<div class="price">$20</div>
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='bayern-luisdiaz.html'">
-
-<div class="img-wrap">
-<img src="Futbol/Bayern/luisdiaz-back.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-<div class="brand">Bayern Múnich</div>
-<div class="name">Luis Díaz #14</div>
-<div class="price">$20</div>
-</div>
-
-</div>
-
-
 
 </div>
 
