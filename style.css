@@ -130,3 +130,17 @@ button:active,
     margin-bottom: 60px;
   }
 }
+/* Placeholder de carga con el logo del sitio */
+.img-skeleton {
+  background-color: #f0f0f0 !important;
+  background-image: url('logo-leon-gris.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 35% auto !important;
+  animation: none !important;
+}
+
+.img-cargada {
+  background-image: none !important;
+  background-color: transparent !important;
+}
