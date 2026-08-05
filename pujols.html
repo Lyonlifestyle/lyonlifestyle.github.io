@@ -34,7 +34,7 @@ font-family:Arial,sans-serif;
   height: 70vh;
   width: auto;
   opacity: 0.15;
-  z-index: 0;
+  z-index: 5;
   pointer-events: none;
 }
 
@@ -51,13 +51,13 @@ font-family:Arial,sans-serif;
 .header{
 position:sticky;
 top:0;
-background:#fff;
+background:#111;
 height:70px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 15px;
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #D4AF37;
 z-index:1000;
 }
 
@@ -65,7 +65,7 @@ z-index:1000;
 .search{
 font-size:28px;
 text-decoration:none;
-color:black;
+color:#fff;
 }
 
 .titulo{
@@ -76,11 +76,16 @@ flex:1;
 .tienda{
 font-size:22px;
 font-weight:bold;
+color:#fff;
+}
+
+.tienda .dorado{
+color:#D4AF37;
 }
 
 .producto-header{
 font-size:13px;
-color:#666;
+color:#ccc;
 }
 
 .slider{
@@ -115,7 +120,7 @@ cursor:pointer;
 display:flex;
 overflow-x:auto;
 gap:8px;
-padding:8px 10px;
+padding:8px 10px 24px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -135,36 +140,117 @@ cursor:pointer;
 padding:10px 20px 20px;
 }
 
+.titulo-precio-top{
+padding:14px 20px 0;
+}
+
 .modelo{
 font-size:22px;
 font-weight:bold;
 margin-bottom:6px;
 margin-top:4px;
+text-align:center;
 }
 
 .precio{
 font-size:22px;
 font-weight:bold;
 margin-bottom:12px;
+text-align:center;
 }
 
 .tallas{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-margin-bottom:20px;
+justify-content:center;
+margin-bottom:8px;
 }
 
 .talla{
-padding:10px 20px;
-border:1px solid #000;
-border-radius:5px;
+min-width:64px;
+padding:15px 26px;
+background:#111;
+color:#D4AF37;
+border:1px solid #D4AF37;
+border-radius:24px;
+font-size:19px;
+font-weight:bold;
+text-align:center;
 cursor:pointer;
 }
 
+.info-tallas{
+font-size:12px;
+color:#888;
+text-align:center;
+margin-bottom:45px;
+}
+
+.titulo-seccion{
+font-size:13px;
+font-weight:bold;
+letter-spacing:1px;
+color:#D4AF37;
+text-transform:uppercase;
+margin-bottom:12px;
+text-align:center;
+}
+
+.info > .titulo-seccion:first-child{
+margin-top:15px;
+font-size:17px;
+}
+
 .descripcion{
+background:#fafafa;
+border:1px solid #eee;
+border-left:3px solid #D4AF37;
+border-radius:8px;
+padding:18px 20px;
 line-height:1.6;
 color:#555;
+margin-bottom:25px;
+}
+
+.descripcion .titulo-seccion{
+font-size:17px;
+margin-bottom:14px;
+}
+
+.descripcion .gancho{
+font-size:20px;
+font-weight:bold;
+color:#111;
+text-align:center;
+margin-bottom:10px;
+}
+
+.descripcion p{
+margin-bottom:10px;
+}
+
+.descripcion p:last-child{
+margin-bottom:0;
+}
+
+.lista-beneficios{
+list-style:none;
+margin-bottom:10px;
+}
+
+.lista-beneficios li{
+position:relative;
+padding-left:22px;
+margin-bottom:6px;
+}
+
+.lista-beneficios li::before{
+content:"✓";
+position:absolute;
+left:0;
+color:#D4AF37;
+font-weight:bold;
 }
 
 .modal{
@@ -342,7 +428,7 @@ transform:scale(1.1);
 <a href="Pag1.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
-stroke="black"
+stroke="white"
 stroke-width="2.5"
 stroke-linecap="round"
 stroke-linejoin="round"/>
@@ -350,7 +436,7 @@ stroke-linejoin="round"/>
 </a>
 
 <div class="titulo">
-<div class="tienda">LYON LIFESTYLE</div>
+<div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
 <div class="producto-header">
 Los Angeles Angels
 </div>
@@ -363,6 +449,16 @@ Los Angeles Angels
 <nav class="breadcrumb">
   <a href="index.html">Inicio</a> › <a href="Pag1.html">Béisbol</a> › <span>Pujols</span>
 </nav>
+
+<div class="titulo-precio-top">
+<div class="modelo">
+Los Angeles Angels - Pujols #5
+</div>
+
+<div class="precio">
+$25.00
+</div>
+</div>
 
 <div class="producto-pc">
 <div class="galeria">
@@ -387,21 +483,26 @@ Los Angeles Angels
 </div>
 <div class="info">
 
-<div class="modelo">
-Los Angeles Angels - Pujols #5
-</div>
-
-<div class="precio">
-$25.00
-</div>
-
-<h3>Tallas</h3>
+<div class="titulo-seccion">Tallas disponibles</div>
 
 <div class="tallas"><!--
 <div class="talla">S</div>
 <div class="talla">M</div>-->
 <div class="talla">L</div><!--
 <div class="talla">XL</div>-->
+</div>
+<p class="info-tallas">Consulta disponibilidad exacta por WhatsApp antes de comprar.</p>
+
+<div class="descripcion">
+<div class="titulo-seccion">Descripción del producto</div>
+<p class="gancho">La máquina dominicana del béisbol 🇩🇴</p>
+<p>Albert Pujols es sinónimo de poder y consistencia, uno de los bateadores más grandes de la historia. Esta camiseta rinde tributo a su legado con los Angels y a la garra dominicana que lo llevó a Cooperstown.</p>
+<ul class="lista-beneficios">
+<li>Material premium, transpirable y de larga duración</li>
+<li>Diseño ideal para el día a día o para coleccionar</li>
+<li>Detalles inspirados en la camiseta oficial #5</li>
+</ul>
+<p>Ideal para regalo o para llevar contigo la historia del béisbol dominicano. ¡Consíguela antes de que se agote! 🏆</p>
 </div>
 
 <a
@@ -411,10 +512,6 @@ class="btn-whatsapp">
 🛒 Comprar por WhatsApp
 
 </a>
-
-<div class="descripcion">
-Camiseta oficial estilo Los Angeles Angels, versión Pujols #5. Material premium, ajuste cómodo y diseño urbano ideal para uso diario.
-</div>
 
 </div>
 </div>
@@ -454,7 +551,6 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
   <a href="envios.html">Envíos</a>
   <a href="cambios.html">Cambios y devoluciones</a>
   <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-  <a href="guia-tallas.html">Guía de tallas</a>
 </div>
 
 <div class="footer-redes">

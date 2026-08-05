@@ -3,104 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre Sport Life</title>
-
+<title>Sobre Nuestra Tienda - Lyon Lifestyle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f5f5f5;
-    color:#333;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: #000000;
+  font-family: 'Inter', sans-serif;
+  color: #cccccc;
+  overflow-x: hidden;
 }
 
-header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+.marca-agua-lateral {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: auto;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
 }
+
+.header-nuevo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+}
+.back-btn, .home-btn {
+  font-size: 22px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.titulo-pagina {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #D4AF37;
+}
+
+.breadcrumb {
+  position: relative; z-index: 1;
+  padding: 14px 20px 0;
+  font-size: 13px;
+  color: #999999;
+}
+.breadcrumb a { color: #D4AF37; text-decoration: none; font-weight: 600; }
+.breadcrumb span { color: #cccccc; }
 
 .contenedor{
-    max-width:1000px;
-    margin:auto;
-    padding:30px;
-}
-
-h2{
-    color:#0a7cff;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+  padding: 25px 20px 30px;
 }
 
 .tarjeta{
-    background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  background: #1a1a1a;
+  border: 1px solid #D4AF37;
+  padding: 22px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+}
+
+.tarjeta h2{
+  font-family: 'Bebas Neue', sans-serif;
+  color: #D4AF37;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.tarjeta p{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cccccc;
 }
 
 .boton{
-    display:inline-block;
-    background:#0a7cff;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:30px;
-    margin-top:15px;
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-top: 15px;
 }
 
-.topbar{
-display:flex;
-align-items:center;
-gap:10px;
+footer { padding: 20px 15px 30px; text-align: center; position: relative; z-index: 1; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 20px; }
+.footer-links a { color: #cccccc; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 12px; }
+.footer-links a:hover { color: #D4AF37; }
+.redes { display: flex; justify-content: center; gap: 14px; margin-bottom: 18px; }
+.redes a {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid #D4AF37; color: #D4AF37;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; font-size: 16px;
 }
+.footer-linea { border: none; border-top: 1px solid #333333; margin: 15px 0; }
+.copyright { font-family: 'Inter', sans-serif; font-size: 11px; color: #777777; }
 
-.back-btn,
-.home-btn{
-font-size:24px;
-cursor:pointer;
-text-decoration:none;
-color:black;
+.whatsapp-flotante {
+  position: fixed; bottom: 20px; right: 20px;
+  width: 55px; height: 55px; background-color: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 26px; text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 999;
+  transition: transform 0.2s ease;
 }
-
-.title{
-flex:1;
-font-size:20px;
-font-weight:bold;
-text-align:center;
-}
-
-.search{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:1px solid #ccc;
-border-radius:25px;
-font-size:16px;
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:30px;
-}
+.whatsapp-flotante:hover { transform: scale(1.1); }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>SPORT LIFE</h1>
-    <p>Deporte, Estilo y Bienestar</p>
-</header>
+<img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
+
+<div class="header-nuevo">
+  <a href="javascript:void(0)" class="back-btn" onclick="window.location.replace('index.html')">←</a>
+  <div class="titulo-pagina">NOSOTROS</div>
+  <a href="index.html" class="home-btn">🏠</a>
+</div>
+
+<nav class="breadcrumb">
+  <a href="index.html">Inicio</a> › <span>Sobre nuestra tienda</span>
+</nav>
 
 <div class="contenedor">
 
     <div class="tarjeta">
         <h2>¿Quiénes Somos?</h2>
         <p>
-            Sport Life es una tienda online dedicada a ofrecer productos
+            LYON LIFESTYLE es una tienda online dedicada a ofrecer productos
             relacionados con el deporte, el estilo de vida saludable y el
             cuidado personal. Nuestro catálogo incluye gorras, ropa deportiva,
             artículos de fútbol, béisbol, baloncesto, fitness, accesorios,
@@ -143,33 +189,30 @@ footer{
             compra, estaremos encantados de ayudarte.
         </p>
 
-        <a href="https://wa.me/1234567890" class="boton">
-            Contactar por WhatsApp
+        <a href="https://wa.me/5363156903" class="boton">
+            💬 Contactar por WhatsApp
         </a>
     </div>
 
 </div>
 
-<div class="topbar">
-
-<a href="javascript:void(0)" class="back-btn"
-onclick="window.location.replace(document.referrer)">
-←
-</a>
-
-<div class="title">
-SPORT LIFE
-</div>
-
-<a href="index.html" class="home-btn">
-🏠
-</a>
-
-</div>
-
 <footer>
-    © 2026 Sport Life - Todos los derechos reservados.
+  <div class="footer-links">
+    <a href="envios.html">Envíos</a>
+    <a href="cambios.html">Cambios y devoluciones</a>
+    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+  </div>
+  <div class="redes">
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+    <a href="https://instagram.com/lyonlife.style" target="_blank" aria-label="Instagram">📸</a>
+    <a href="https://youtube.com" target="_blank" aria-label="YouTube">▶️</a>
+    <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+  </div>
+  <hr class="footer-linea">
+  <div class="copyright">© 2026 LYON LIFESTYLE. Todos los derechos reservados.</div>
 </footer>
+
+<a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
 
 </body>
 </html>
