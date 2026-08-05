@@ -24,9 +24,9 @@ background:#fff;
 header{
 position:sticky;
 top:0;
-background:white;
+background:#111;
 z-index:1000;
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #D4AF37;
 padding:10px;
 }
 
@@ -41,21 +41,34 @@ gap:10px;
 font-size:24px;
 cursor:pointer;
 text-decoration:none;
-color:black;
+color:#fff;
 }
 
 .title{
 flex:1;
-font-size:20px;
-font-weight:bold;
 text-align:center;
+}
+
+.tienda{
+font-size:22px;
+font-weight:bold;
+color:#fff;
+}
+
+.tienda .dorado{
+color:#D4AF37;
+}
+
+.categoria-header{
+font-size:13px;
+color:#ccc;
 }
 
 .search{
 width:100%;
 padding:10px;
 margin-top:10px;
-border:1px solid #ccc;
+border:1px solid #D4AF37;
 border-radius:25px;
 font-size:16px;
 }
@@ -81,7 +94,7 @@ font-size:16px;
   height: 70vh;
   width: auto;
   opacity: 0.15;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -96,7 +109,7 @@ padding:12px 10px 4px;
 .filtro-chip{
 flex:0 0 auto;
 padding:8px 16px;
-border:1px solid #ccc;
+border:1px solid #D4AF37;
 border-radius:20px;
 font-size:13px;
 font-weight:600;
@@ -108,7 +121,7 @@ transition:.2s;
 .filtro-chip.activo{
 background:#111;
 color:white;
-border-color:#111;
+border-color:#D4AF37;
 }
 
 /* CONTADOR / BREADCRUMB */
@@ -317,11 +330,18 @@ transform:scale(1.1);
 
 <a href="javascript:void(0)" class="back-btn"
 onclick="window.location.replace('index.html')">
-←
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+<path d="M15 18L9 12L15 6"
+stroke="white"
+stroke-width="2.5"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
 </a>
 
 <div class="title">
-FITNESS
+<div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
+<div class="categoria-header">Fitness</div>
 </div>
 
 <a href="index.html" class="home-btn">
@@ -429,7 +449,7 @@ $20
 
 <footer>
 
-<h3>SPORT LIFE</h3>
+<h3>LYON <span style="color:#D4AF37;">LIFESTYLE</span></h3>
 
 <p>
 Accesorios Deportivos • Gorras • Perfumes • Fitness
@@ -439,7 +459,6 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
   <a href="envios.html">Envíos</a>
   <a href="cambios.html">Cambios y devoluciones</a>
   <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-  <a href="guia-tallas.html">Guía de tallas</a>
 </div>
 
 <div class="footer-redes">
