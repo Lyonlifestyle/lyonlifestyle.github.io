@@ -383,89 +383,15 @@ onkeyup="searchProducts()">
 
 <!-- ======================================================
      SECCIÓN DE PRODUCTOS
-     Cada tarjeta .card es un producto. Para agregar uno nuevo,
-     copia un bloque completo <div class="card">...</div> y pega
-     debajo, cambiando: la foto, la marca, el nombre, el precio,
-     el link (onclick) y el precio en data-precio.
+     Ya NO se editan tarjetas a mano acá. Las tarjetas se arman
+     solas leyendo productos.js (ver <script> al final de la
+     página), filtrando por categoria = "accesorios".
+     Para agregar/quitar un producto de esta página, se edita el
+     bloque de esa página de producto (nombre, categoria, precio,
+     etc.) y se vuelve a correr generar_catalogo.py.
      ====================================================== -->
 
 <section class="products" id="gridProductos">
-
-<div class="card" data-precio="10"
-onclick="location.href='toalla-francia.html'">
-
-<div class="img-wrap">
-<img src="Accesorios/Toallas/toalla-francia.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Selección Francia
-</div>
-
-<div class="name">
-Toalla deportiva FFF
-</div>
-
-<div class="price">
-$10
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="10"
-onclick="location.href='toalla-alemania.html'">
-
-<div class="img-wrap">
-<img src="Accesorios/Toallas/toalla-alemania.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Selección Alemania
-</div>
-
-<div class="name">
-Toalla deportiva DFB
-</div>
-
-<div class="price">
-$10
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="10"
-onclick="location.href='toalla-brasil.html'">
-
-<div class="img-wrap">
-<img src="Accesorios/Toallas/toalla-brasil.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-Selección Brasil
-</div>
-
-<div class="name">
-Toalla deportiva CBF
-</div>
-
-<div class="price">
-$10
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
@@ -497,7 +423,44 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 
 <a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
 
+<script src="productos.js"></script>
+
 <script>
+
+// Categoría que le corresponde a esta página
+const CATEGORIA_PAGINA = "accesorios";
+
+function renderProductos(){
+  const grid = document.getElementById('gridProductos');
+
+  if(typeof productos === 'undefined'){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#c0392b;">⚠️ No se pudo cargar productos.js. Revisá que el archivo esté en la misma carpeta que esta página.</p>';
+    return;
+  }
+
+  const items = productos.filter(p => p.categoria === CATEGORIA_PAGINA);
+
+  if(items.length === 0){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria = "' + CATEGORIA_PAGINA + '")</p>';
+    actualizarContador();
+    return;
+  }
+
+  grid.innerHTML = items.map(p => `
+    <div class="card" data-precio="${p.precio}" data-oferta="${p.en_oferta}"
+      onclick="location.href='${p.url}'">
+      <div class="img-wrap">
+        <img src="${p.imagen}" class="img-skeleton">
+      </div>
+      <div class="info">
+        <div class="name">${p.nombre}</div>
+        <div class="price">$${p.precio}</div>
+      </div>
+    </div>
+  `).join('');
+
+  actualizarContador();
+}
 
 function searchProducts(){
 
@@ -556,12 +519,13 @@ function filtrarPor(criterio, boton){
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(card=>{
-    let text = card.innerText.toLowerCase();
-    if(criterio === 'todos' || text.indexOf(criterio) > -1){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+    let mostrar = true;
+    if(criterio === 'off'){
+      mostrar = card.dataset.oferta === 'true';
+    } else if(criterio !== 'todos'){
+      mostrar = card.innerText.toLowerCase().indexOf(criterio) > -1;
     }
+    card.style.display = mostrar ? "block" : "none";
   });
 
   document.getElementById('searchInput').value = '';
@@ -569,7 +533,7 @@ function filtrarPor(criterio, boton){
   actualizarContador();
 }
 
-document.addEventListener('DOMContentLoaded', actualizarContador);
+document.addEventListener('DOMContentLoaded', renderProductos);
 
 </script>
 

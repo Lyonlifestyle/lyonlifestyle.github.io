@@ -389,62 +389,16 @@ onkeyup="searchProducts()">
      el link (onclick) y el precio en data-precio.
      ====================================================== -->
 
+<!-- ======================================================
+     SECCIÓN DE PRODUCTOS
+     No se editan tarjetas a mano acá. Las tarjetas se arman solas
+     leyendo productos.js, filtrando por categoria = "gorras".
+     Para agregar/quitar un producto de esta página, se edita el
+     bloque de esa página de producto (categoria, precio, etc.) y
+     se vuelve a correr generar_catalogo.py.
+     ====================================================== -->
+
 <section class="products" id="gridProductos">
-
-<div class="card" data-precio="10"
-onclick="location.href='Cuba.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-EXCLUSIVE
-</div>
-
-<img src="Gorras/Cuba.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-MARCA / EQUIPO
-</div>
-
-<div class="name">
-Cuba
-</div>
-
-<div class="price">
-$10
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='PR.html'">
-
-<div class="img-wrap">
-<img src="Gorras/Pr.png" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-MARCA / EQUIPO
-</div>
-
-<div class="name">
-Nombre del producto
-</div>
-
-<div class="price">
-$10
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
@@ -476,7 +430,44 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 
 <a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
 
+<script src="productos.js"></script>
+
 <script>
+
+// Categoria que le corresponde a esta pagina
+const CATEGORIA_PAGINA = "gorras";
+
+function renderProductos(){
+  const grid = document.getElementById('gridProductos');
+
+  if(typeof productos === 'undefined'){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#c0392b;">⚠️ No se pudo cargar productos.js. Revisá que el archivo esté en la misma carpeta que esta página.</p>';
+    return;
+  }
+
+  const items = productos.filter(p => p.categoria === CATEGORIA_PAGINA);
+
+  if(items.length === 0){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria = "gorras")</p>';
+    actualizarContador();
+    return;
+  }
+
+  grid.innerHTML = items.map(p => `
+    <div class="card" data-precio="${p.precio}" data-oferta="${p.en_oferta}"
+      onclick="location.href='${p.url}'">
+      <div class="img-wrap">
+        <img src="${p.imagen}" class="img-skeleton">
+      </div>
+      <div class="info">
+        <div class="name">${p.nombre}</div>
+        <div class="price">$${p.precio}</div>
+      </div>
+    </div>
+  `).join('');
+
+  actualizarContador();
+}
 
 function searchProducts(){
 
@@ -535,12 +526,13 @@ function filtrarPor(criterio, boton){
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(card=>{
-    let text = card.innerText.toLowerCase();
-    if(criterio === 'todos' || text.indexOf(criterio) > -1){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+    let mostrar = true;
+    if(criterio === 'off'){
+      mostrar = card.dataset.oferta === 'true';
+    } else if(criterio !== 'todos'){
+      mostrar = card.innerText.toLowerCase().indexOf(criterio) > -1;
     }
+    card.style.display = mostrar ? "block" : "none";
   });
 
   document.getElementById('searchInput').value = '';
@@ -548,7 +540,7 @@ function filtrarPor(criterio, boton){
   actualizarContador();
 }
 
-document.addEventListener('DOMContentLoaded', actualizarContador);
+document.addEventListener('DOMContentLoaded', renderProductos);
 
 </script>
 

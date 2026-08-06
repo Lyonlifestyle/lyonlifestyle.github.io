@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cuidado - Sport Life</title>
+<title>Ofertas - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -24,9 +24,9 @@ background:#fff;
 header{
 position:sticky;
 top:0;
-background:white;
+background:#111;
 z-index:1000;
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #D4AF37;
 padding:10px;
 }
 
@@ -41,21 +41,34 @@ gap:10px;
 font-size:24px;
 cursor:pointer;
 text-decoration:none;
-color:black;
+color:#fff;
 }
 
 .title{
 flex:1;
-font-size:20px;
-font-weight:bold;
 text-align:center;
+}
+
+.tienda{
+font-size:22px;
+font-weight:bold;
+color:#fff;
+}
+
+.tienda .dorado{
+color:#D4AF37;
+}
+
+.categoria-header{
+font-size:13px;
+color:#ccc;
 }
 
 .search{
 width:100%;
 padding:10px;
 margin-top:10px;
-border:1px solid #ccc;
+border:1px solid #D4AF37;
 border-radius:25px;
 font-size:16px;
 }
@@ -81,7 +94,7 @@ font-size:16px;
   height: 70vh;
   width: auto;
   opacity: 0.15;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -96,7 +109,7 @@ padding:12px 10px 4px;
 .filtro-chip{
 flex:0 0 auto;
 padding:8px 16px;
-border:1px solid #ccc;
+border:1px solid #D4AF37;
 border-radius:20px;
 font-size:13px;
 font-weight:600;
@@ -108,7 +121,7 @@ transition:.2s;
 .filtro-chip.activo{
 background:#111;
 color:white;
-border-color:#111;
+border-color:#D4AF37;
 }
 
 /* CONTADOR / BREADCRUMB */
@@ -317,11 +330,18 @@ transform:scale(1.1);
 
 <a href="javascript:void(0)" class="back-btn"
 onclick="window.location.replace('index.html')">
-←
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+<path d="M15 18L9 12L15 6"
+stroke="white"
+stroke-width="2.5"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
 </a>
 
 <div class="title">
-CUIDADO PERSONAL
+<div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
+<div class="categoria-header">Ofertas</div>
 </div>
 
 <a href="index.html" class="home-btn">
@@ -340,14 +360,12 @@ onkeyup="searchProducts()">
 <div class="filtros">
   <button class="filtro-chip activo" onclick="filtrarPor('todos', this)">Todos</button>
   <button class="filtro-chip" onclick="filtrarPor('exclusive', this)">Exclusivos</button>
-  <button class="filtro-chip" onclick="filtrarPor('off', this)">En oferta</button>
-  <!-- Agrega más chips de filtro aquí si los necesitas, ej: <button class="filtro-chip" onclick="filtrarPor('palabra', this)">Nombre</button> -->
 </div>
 
 </header>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <span>Cuidado</span>
+  <a href="index.html">Inicio</a> › <span>Ofertas</span>
 </nav>
 
 <div class="count-orden">
@@ -363,19 +381,12 @@ onkeyup="searchProducts()">
 
 <!-- ======================================================
      SECCIÓN DE PRODUCTOS
-     Cada tarjeta .card es un producto. Para agregar uno nuevo,
-     copia un bloque completo <div class="card">...</div> y pega
-     debajo, cambiando: la foto, la marca, el nombre, el precio,
-     el link (onclick) y el precio en data-precio.
-     ====================================================== -->
-
-<!-- ======================================================
-     SECCIÓN DE PRODUCTOS
      No se editan tarjetas a mano acá. Las tarjetas se arman solas
-     leyendo productos.js, filtrando por categoria = "cuidado".
-     Para agregar/quitar un producto de esta página, se edita el
-     bloque de esa página de producto (categoria, precio, etc.) y
-     se vuelve a correr generar_catalogo.py.
+     leyendo productos.js, mostrando todo producto cuyo en_oferta
+     sea true (o sea: tiene precio_anterior mayor al precio actual).
+     Para que un producto aparezca/desaparezca de esta página, se
+     edita precio y precio_anterior en el bloque de esa página de
+     producto y se vuelve a correr generar_catalogo.py.
      ====================================================== -->
 
 <section class="products" id="gridProductos">
@@ -383,7 +394,7 @@ onkeyup="searchProducts()">
 
 <footer>
 
-<h3>SPORT LIFE</h3>
+<h3>LYON <span style="color:#D4AF37;">LIFESTYLE</span></h3>
 
 <p>
 Accesorios Deportivos • Gorras • Perfumes • Fitness
@@ -393,7 +404,6 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
   <a href="envios.html">Envíos</a>
   <a href="cambios.html">Cambios y devoluciones</a>
   <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-  <a href="guia-tallas.html">Guía de tallas</a>
 </div>
 
 <div class="footer-redes">
@@ -415,8 +425,8 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 
 <script>
 
-// Categoria que le corresponde a esta pagina
-const CATEGORIA_PAGINA = "cuidado";
+// Categoría que le corresponde a esta página
+// Esta página no filtra por categoría, filtra por en_oferta
 
 function renderProductos(){
   const grid = document.getElementById('gridProductos');
@@ -426,10 +436,10 @@ function renderProductos(){
     return;
   }
 
-  const items = productos.filter(p => p.categoria === CATEGORIA_PAGINA);
+  const items = productos.filter(p => p.en_oferta === true);
 
   if(items.length === 0){
-    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria = "cuidado")</p>';
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay ofertas por ahora. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene en_oferta = true)</p>';
     actualizarContador();
     return;
   }

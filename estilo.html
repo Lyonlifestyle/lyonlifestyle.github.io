@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zapatos - Sport Life</title>
+<title>Estilo - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -341,7 +341,7 @@ stroke-linejoin="round"/>
 
 <div class="title">
 <div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
-<div class="categoria-header">Zapatos</div>
+<div class="categoria-header">Estilo</div>
 </div>
 
 <a href="index.html" class="home-btn">
@@ -367,7 +367,7 @@ onkeyup="searchProducts()">
 </header>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <span>Zapatos</span>
+  <a href="index.html">Inicio</a> › <span>Estilo</span>
 </nav>
 
 <div class="count-orden">
@@ -389,62 +389,17 @@ onkeyup="searchProducts()">
      el link (onclick) y el precio en data-precio.
      ====================================================== -->
 
+<!-- ======================================================
+     SECCIÓN DE PRODUCTOS
+     No se editan tarjetas a mano acá. Las tarjetas se arman solas
+     leyendo productos.js, mostrando todo producto cuya categoria
+     sea "estilo", "moda" o "ropa" (las tres cuentan para esta
+     página). Para agregar/quitar un producto de esta página, se
+     edita el campo categoria en el bloque de esa página de
+     producto y se vuelve a correr generar_catalogo.py.
+     ====================================================== -->
+
 <section class="products" id="gridProductos">
-
-<div class="card" data-precio="20"
-onclick="location.href='producto1.html'">
-
-<div class="img-wrap">
-<div class="exclusive">
-EXCLUSIVE
-</div>
-
-<img src="RUTA-DE-TU-FOTO-1.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-MARCA / EQUIPO
-</div>
-
-<div class="name">
-Nombre del producto
-</div>
-
-<div class="price">
-$20
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-precio="20"
-onclick="location.href='producto2.html'">
-
-<div class="img-wrap">
-<img src="RUTA-DE-TU-FOTO-2.jpg" class="img-skeleton">
-</div>
-
-<div class="info">
-
-<div class="brand">
-MARCA / EQUIPO
-</div>
-
-<div class="name">
-Nombre del producto
-</div>
-
-<div class="price">
-$20
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
@@ -476,7 +431,44 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 
 <a href="https://wa.me/5363156903" class="whatsapp-flotante" target="_blank" aria-label="WhatsApp">💬</a>
 
+<script src="productos.js"></script>
+
 <script>
+
+// Esta página agrupa varias categorías relacionadas con estilo
+const CATEGORIAS_PAGINA = ["estilo", "moda", "ropa"];
+
+function renderProductos(){
+  const grid = document.getElementById('gridProductos');
+
+  if(typeof productos === 'undefined'){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#c0392b;">⚠️ No se pudo cargar productos.js. Revisá que el archivo esté en la misma carpeta que esta página.</p>';
+    return;
+  }
+
+  const items = productos.filter(p => CATEGORIAS_PAGINA.includes(p.categoria));
+
+  if(items.length === 0){
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria estilo/moda/ropa)</p>';
+    actualizarContador();
+    return;
+  }
+
+  grid.innerHTML = items.map(p => `
+    <div class="card" data-precio="${p.precio}" data-oferta="${p.en_oferta}"
+      onclick="location.href='${p.url}'">
+      <div class="img-wrap">
+        <img src="${p.imagen}" class="img-skeleton">
+      </div>
+      <div class="info">
+        <div class="name">${p.nombre}</div>
+        <div class="price">$${p.precio}</div>
+      </div>
+    </div>
+  `).join('');
+
+  actualizarContador();
+}
 
 function searchProducts(){
 
@@ -535,12 +527,13 @@ function filtrarPor(criterio, boton){
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(card=>{
-    let text = card.innerText.toLowerCase();
-    if(criterio === 'todos' || text.indexOf(criterio) > -1){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+    let mostrar = true;
+    if(criterio === 'off'){
+      mostrar = card.dataset.oferta === 'true';
+    } else if(criterio !== 'todos'){
+      mostrar = card.innerText.toLowerCase().indexOf(criterio) > -1;
     }
+    card.style.display = mostrar ? "block" : "none";
   });
 
   document.getElementById('searchInput').value = '';
@@ -548,7 +541,7 @@ function filtrarPor(criterio, boton){
   actualizarContador();
 }
 
-document.addEventListener('DOMContentLoaded', actualizarContador);
+document.addEventListener('DOMContentLoaded', renderProductos);
 
 </script>
 
