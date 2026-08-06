@@ -1,6 +1,8 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-06 03:06
+// Última actualización: 2026-08-06 05:02
+// Organizado por categoría para mayor claridad
 const productos = [
+  // ===== FÚTBOL =====
   {
     "id": "barcelona-lamineyamal",
     "nombre": "FC Barcelona - Lamine Yamal #10",
@@ -44,76 +46,6 @@ const productos = [
     "en_oferta": false
   },
   {
-    "id": "clemente-pr",
-    "nombre": "Puerto Rico - Roberto Clemente #21",
-    "categoria": "beisbol",
-    "precio": 25,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Beisbol/PR/clemente.png",
-    "url": "Clemente.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
-    "id": "cuba-gorra",
-    "nombre": "Cuba",
-    "categoria": "gorras",
-    "precio": 10,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Gorras/Cuba.png",
-    "url": "Cuba.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
-    "id": "dhabana-hombre",
-    "nombre": "D HABANA - Eau de Toilette",
-    "categoria": "perfumes",
-    "precio": 20,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Perfumes/DeHabana/hombre.png",
-    "url": "DHabanahombre.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
-    "id": "dhabana-mujer",
-    "nombre": "D HABANA - Eau de Parfum",
-    "categoria": "perfumes",
-    "precio": 25,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Perfumes/DeHabana/mujer.png",
-    "url": "DHabanamujer.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
-    "id": "dhabana-set",
-    "nombre": "D HABANA - Set Hombre y Mujer",
-    "categoria": "combo",
-    "precio": 40,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Combos/DeHabana1.png",
-    "url": "dehabana.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
     "id": "lamine-barcelona",
     "nombre": "FC Barcelona Temporada 2025-2026 Lamine Yamal #10",
     "categoria": "futbol",
@@ -126,20 +58,6 @@ const productos = [
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
     "en_oferta": true
-  },
-  {
-    "id": "mariano-rivera",
-    "nombre": "New York Yankees - Mariano Rivera #42",
-    "categoria": "beisbol",
-    "precio": 40,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Beisbol/Mariano/mariano42.png",
-    "url": "Mariano.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
   },
   {
     "id": "pedri-barcelona",
@@ -164,20 +82,6 @@ const productos = [
     "moneda": "USD",
     "imagen": "Futbol/Pedri.jpg",
     "url": "Pedri.html",
-    "nuevo": false,
-    "fecha_agregado": "2026-06-15",
-    "es_novedad": false,
-    "en_oferta": false
-  },
-  {
-    "id": "pujols-angels",
-    "nombre": "Los Angeles Angels - Pujols #5",
-    "categoria": "beisbol",
-    "precio": 25,
-    "precio_anterior": null,
-    "moneda": "USD",
-    "imagen": "Beisbol/Angels/pujols.png",
-    "url": "pujols.html",
     "nuevo": false,
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
@@ -239,6 +143,142 @@ const productos = [
     "es_novedad": false,
     "en_oferta": false
   },
+
+  // ===== BÉISBOL =====
+  {
+    "id": "clemente-pr",
+    "nombre": "Puerto Rico - Roberto Clemente #21",
+    "categoria": "beisbol",
+    "precio": 25,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Beisbol/PR/clemente.png",
+    "url": "Clemente.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "mariano-rivera",
+    "nombre": "New York Yankees - Mariano Rivera #42",
+    "categoria": "beisbol",
+    "precio": 40,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Beisbol/Mariano/mariano42.png",
+    "url": "Mariano.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "pujols-angels",
+    "nombre": "Los Angeles Angels - Pujols #5",
+    "categoria": "beisbol",
+    "precio": 25,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Beisbol/Angels/pujols.png",
+    "url": "pujols.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+
+  // ===== GORRAS =====
+  {
+    "id": "cuba-gorra",
+    "nombre": "Cuba",
+    "categoria": "gorras",
+    "precio": 10,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Gorras/Cuba.png",
+    "url": "Cuba.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "detroit-gorra",
+    "nombre": "Detroit",
+    "categoria": "gorras",
+    "precio": 10,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Gorras/Detroit.png",
+    "url": "Detroit.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "pr-gorra",
+    "nombre": "Puerto Rico",
+    "categoria": "gorras",
+    "precio": 10,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Gorras/Pr.png",
+    "url": "Pr.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+
+  // ===== PERFUMES =====
+  {
+    "id": "dhabana-hombre",
+    "nombre": "D HABANA - Eau de Toilette",
+    "categoria": "perfumes",
+    "precio": 20,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Perfumes/DeHabana/hombre.png",
+    "url": "DHabanahombre.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "dhabana-mujer",
+    "nombre": "D HABANA - Eau de Parfum",
+    "categoria": "perfumes",
+    "precio": 25,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Perfumes/DeHabana/mujer.png",
+    "url": "DHabanamujer.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+
+  // ===== COMBOS =====
+  {
+    "id": "dhabana-set",
+    "nombre": "D HABANA - Set Hombre y Mujer",
+    "categoria": "combo",
+    "precio": 40,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Combos/DeHabana1.png",
+    "url": "dehabana.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-06-15",
+    "es_novedad": false,
+    "en_oferta": false
+  },
+
+  // ===== ACCESORIOS =====
   {
     "id": "toalla-alemania",
     "nombre": "Toalla Deportiva Selección Alemania (DFB)",
@@ -278,6 +318,22 @@ const productos = [
     "url": "toalla-francia.html",
     "nuevo": true,
     "fecha_agregado": "2026-06-15",
+    "es_novedad": true,
+    "en_oferta": false
+  },
+
+  // ===== COMBOS =====
+  {
+    "id": "combo-pr",
+    "nombre": "Combo Camisa + Gorra Puerto Rico",
+    "categoria": "combos",
+    "precio": 30,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Imagen/Combopr.png",
+    "url": "Combopr.html",
+    "nuevo": true,
+    "fecha_agregado": "2026-08-06",
     "es_novedad": true,
     "en_oferta": false
   }

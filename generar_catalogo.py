@@ -20,6 +20,22 @@ from pathlib import Path
 CARPETA = Path(__file__).parent
 DIAS_NOVEDAD = 30  # un producto se considera "novedad" si fue agregado hace <= 30 días
 
+# Orden en el que se agrupan las categorías dentro de productos.js.
+# Cualquier categoría que no esté en esta lista se agrega al final,
+# ordenada alfabéticamente.
+ORDEN_CATEGORIAS = ["futbol", "beisbol", "gorras", "perfumes", "combo", "accesorios"]
+
+# Nombre bonito para el comentario de cada sección (si no está aquí,
+# se usa la categoría tal cual, con la primera letra en mayúscula).
+NOMBRES_CATEGORIAS = {
+    "futbol": "FÚTBOL",
+    "beisbol": "BÉISBOL",
+    "gorras": "GORRAS",
+    "perfumes": "PERFUMES",
+    "combo": "COMBOS",
+    "accesorios": "ACCESORIOS",
+}
+
 PATRON_BLOQUE = re.compile(
     r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
     re.DOTALL | re.IGNORECASE,
@@ -79,16 +95,39 @@ def main():
         datos["en_oferta"] = en_oferta(datos)
         productos.append(datos)
 
-    productos.sort(key=lambda p: p["id"])
+    def clave_categoria(categoria: str):
+        if categoria in ORDEN_CATEGORIAS:
+            return (0, ORDEN_CATEGORIAS.index(categoria))
+        return (1, categoria)
+
+    productos.sort(key=lambda p: (clave_categoria(p["categoria"]), p["id"]))
 
     salida = CARPETA / "productos.js"
-    contenido_js = (
-        "// Generado automáticamente por generar_catalogo.py — no editar a mano\n"
-        f"// Última actualización: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        "const productos = "
-        + json.dumps(productos, ensure_ascii=False, indent=2)
-        + ";\n"
-    )
+    lineas = [
+        "// Generado automáticamente por generar_catalogo.py — no editar a mano",
+        f"// Última actualización: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        "// Organizado por categoría para mayor claridad",
+        "const productos = [",
+    ]
+
+    categoria_actual = None
+    for i, producto in enumerate(productos):
+        if producto["categoria"] != categoria_actual:
+            categoria_actual = producto["categoria"]
+            if i > 0:
+                lineas.append("")
+            nombre_bonito = NOMBRES_CATEGORIAS.get(categoria_actual, categoria_actual.upper())
+            lineas.append(f"  // ===== {nombre_bonito} =====")
+
+        bloque = json.dumps(producto, ensure_ascii=False, indent=2)
+        bloque_indentado = "\n".join(
+            "  " + linea if linea else linea for linea in bloque.splitlines()
+        )
+        coma = "," if i < len(productos) - 1 else ""
+        lineas.append(bloque_indentado + coma)
+
+    lineas.append("];")
+    contenido_js = "\n".join(lineas) + "\n"
     salida.write_text(contenido_js, encoding="utf-8")
 
     print(f"\n✅ productos.js generado con {len(productos)} producto(s).")
