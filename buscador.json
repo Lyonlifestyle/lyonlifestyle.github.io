@@ -1,0 +1,7 @@
+[
+  { "nombre": "Béisbol", "tipo": "Categoría", "url": "Pag1.html" },
+  { "nombre": "Fútbol", "tipo": "Categoría", "url": "Futbol.html" },
+  { "nombre": "CR7", "tipo": "Producto", "url": "CR7.html" },
+  { "nombre": "Pedri", "tipo": "Producto", "url": "Pedri.html" },
+  { "nombre": "Sobre Nuestra Tienda", "tipo": "Página", "url": "nosotros.html" }
+]

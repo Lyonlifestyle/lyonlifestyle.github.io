@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristiano Ronaldo - Real Madrid - Lyon Lifestyle</title>
+<title>D Habana - Eau de Toilette - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -15,6 +15,7 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+/* Skeleton loading */
 .img-skeleton {
   background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
   background-size: 200% 100%;
@@ -26,6 +27,7 @@ font-family:Arial,sans-serif;
   100% { background-position: -200% 0; }
 }
 
+/* Marca de agua */
 .marca-agua-lateral {
   position: fixed;
   top: 50%;
@@ -47,6 +49,8 @@ font-family:Arial,sans-serif;
 }
 .breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
 .breadcrumb span{ color:#999; }
+
+/* HEADER */
 
 .header{
 position:sticky;
@@ -88,6 +92,8 @@ font-size:13px;
 color:#ccc;
 }
 
+/* GALERIA */
+
 .slider{
 display:flex;
 overflow-x:auto;
@@ -116,11 +122,13 @@ display:block;
 cursor:pointer;
 }
 
+/* MINIATURAS */
+
 .miniaturas{
 display:flex;
 overflow-x:auto;
 gap:8px;
-padding:8px 10px 24px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -136,6 +144,8 @@ border-radius:5px;
 cursor:pointer;
 }
 
+/* INFORMACION */
+
 .info{
 padding:10px 20px 20px;
 }
@@ -149,6 +159,7 @@ font-size:22px;
 font-weight:bold;
 margin-bottom:6px;
 margin-top:4px;
+
 text-align:center;
 }
 
@@ -156,6 +167,7 @@ text-align:center;
 font-size:22px;
 font-weight:bold;
 margin-bottom:12px;
+
 text-align:center;
 }
 
@@ -163,18 +175,17 @@ text-align:center;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-justify-content:center;
 margin-bottom:8px;
 }
 
 .talla{
-min-width:64px;
-padding:15px 26px;
+min-width:54px;
+padding:12px 22px;
 background:#111;
 color:#D4AF37;
 border:1px solid #D4AF37;
 border-radius:24px;
-font-size:19px;
+font-size:16px;
 font-weight:bold;
 text-align:center;
 cursor:pointer;
@@ -183,8 +194,7 @@ cursor:pointer;
 .info-tallas{
 font-size:12px;
 color:#888;
-text-align:center;
-margin-bottom:45px;
+margin-bottom:20px;
 }
 
 .titulo-seccion{
@@ -195,11 +205,6 @@ color:#D4AF37;
 text-transform:uppercase;
 margin-bottom:12px;
 text-align:center;
-}
-
-.info > .titulo-seccion:first-child{
-margin-top:15px;
-font-size:17px;
 }
 
 .descripcion{
@@ -253,6 +258,8 @@ color:#D4AF37;
 font-weight:bold;
 }
 
+/* PANTALLA COMPLETA */
+
 .modal{
 display:none;
 position:fixed;
@@ -299,17 +306,21 @@ transition:0.3s;
 transform:scale(1.02);
 }
 
+
 @media (min-width:992px){
 .producto-pc{display:flex;gap:50px;max-width:1400px;margin:40px auto;align-items:flex-start;padding:0 30px;}
+.titulo-precio-top{max-width:1400px;margin:20px auto 0;padding:0 30px;}
 .galeria{flex:1;position:sticky;top:90px;}
 .info{flex:1;padding:0;}
-.slide{background:#f5f5f5;border-radius:12px;}
+.slide{display:flex;justify-content:center;align-items:center;background:#f5f5f5;border-radius:12px;}
 .slide img{width:100%;max-width:700px;max-height:700px;object-fit:contain;}
 .miniaturas{justify-content:center;}
 .modelo{font-size:34px;}
 .precio{font-size:32px;}
 .btn-whatsapp{max-width:420px;}
 }
+
+/* productos relacionados */
 
 .relacionados {
   padding: 30px 20px;
@@ -348,6 +359,8 @@ transform:scale(1.02);
   border: 2px solid #D4AF37;
   margin-bottom: 6px;
 }
+
+/* FOOTER */
 
 footer{
 margin-top:40px;
@@ -423,9 +436,11 @@ transform:scale(1.1);
 
 <img src="logo-leon-mitad.png" class="marca-agua-lateral" alt="">
 
+<!-- HEADER -->
+
 <div class="header">
 
-<a href="Futbol.html" class="back">
+<a href="Perfumes.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
 stroke="white"
@@ -438,7 +453,7 @@ stroke-linejoin="round"/>
 <div class="titulo">
 <div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
 <div class="producto-header">
-Real Madrid
+D HABANA
 </div>
 </div>
 
@@ -447,12 +462,12 @@ Real Madrid
 </div>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <a href="Futbol.html">Fútbol</a> › <span>CR7</span>
+  <a href="index.html">Inicio</a> › <a href="Perfumes.html">Perfumes</a> › <span>D Habana for Man</span>
 </nav>
 
 <div class="titulo-precio-top">
 <div class="modelo">
-Cristiano Ronaldo - "Black Panther" Edition
+D HABANA - Eau de Toilette
 </div>
 
 <div class="precio">
@@ -460,49 +475,88 @@ $20.00
 </div>
 </div>
 
+<!-- BLOQUE DE DATOS DEL PRODUCTO — editar precio arriba Y precio aquí abajo, juntos -->
+<script type="application/ld+json">
+{
+  "id": "dhabana-hombre",
+  "nombre": "D HABANA - Eau de Toilette",
+  "categoria": "perfumes",
+  "precio": 20,
+  "precio_anterior": null,
+  "moneda": "USD",
+  "imagen": "Perfumes/DeHabana/hombre.png",
+  "url": "DHabanahombre.html",
+  "nuevo": false,
+  "fecha_agregado": "2026-06-15"
+}
+</script>
+
+<!-- FOTO GRANDE -->
+
 <div class="producto-pc">
 <div class="galeria">
 <div class="slider" id="slider">
+
 <div class="slide">
-<img src="Cr7.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Perfumes/DeHabana/hombre.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
+
 <div class="slide">
-<img src="Futbol/cr7negraespalda.jpg" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Perfumes/DeHabana/hombre1.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
+
+<div class="slide">
+<img src="Perfumes/DeHabana/hombre2.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
+
+<div class="slide">
+<img src="Perfumes/DeHabana/hombre3.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+
+<div class="slide">
+<img src="Perfumes/DeHabana/hombre4.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<!--
+<div class="slide">
+<img src="Perfumes/DeHabana/hombre5.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>-->
+</div>
+
+<!-- MINIATURAS -->
 
 <div class="miniaturas">
-<img src="Cr7.png" onclick="irFoto(0)">
-<img src="Futbol/cr7negraespalda.jpg" onclick="irFoto(1)">
+
+<img src="Perfumes/DeHabana/hombre.png" onclick="irFoto(0)">
+
+<img src="Perfumes/DeHabana/hombre1.png" onclick="irFoto(1)">
+
+<img src="Perfumes/DeHabana/hombre2.png" onclick="irFoto(2)">
+
+<img src="Perfumes/DeHabana/hombre3.png" onclick="irFoto(3)">
+
+<img src="Perfumes/DeHabana/hombre4.png" onclick="irFoto(4)">
+
 </div>
 
 </div>
+<!-- INFORMACION -->
 <div class="info">
-
-<div class="titulo-seccion">Tallas disponibles</div>
-
-<div class="tallas">
-<div class="talla">S</div>
-<div class="talla">M</div>
-<div class="talla">L</div>
-<div class="talla">XL</div>
-</div>
-<p class="info-tallas">Consulta disponibilidad exacta por WhatsApp antes de comprar.</p>
 
 <div class="descripcion">
 <div class="titulo-seccion">Descripción del producto</div>
-<p class="gancho">El legado de un ícono 🇵🇹</p>
-<p>Cristiano Ronaldo no solo hizo historia en la cancha, se convirtió en un símbolo de disciplina y ambición dentro y fuera del fútbol. Esta edición especial "Black Panther" celebra ese legado con un diseño oscuro y elegante, digno de CR7.</p>
+<p class="gancho">Una fragancia con carácter propio 🖤</p>
+<p>D Habana Eau de Toilette combina frescura y elegancia en cada aplicación, con una fijación duradera pensada para el uso diario. Su diseño rinde homenaje a la identidad y el estilo de La Habana.</p>
 <ul class="lista-beneficios">
-<li>Material premium, transpirable y de larga duración</li>
-<li>Ajuste cómodo, ideal para el día a día o para el estadio</li>
-<li>Edición especial "Black Panther" con detalles exclusivos</li>
+<li>Fragancia fresca de larga duración</li>
+<li>Ideal para uso diario o para regalar</li>
+<li>Diseño elegante inspirado en La Habana</li>
+<li>Presentación premium</li>
 </ul>
-<p>Ideal para regalo o para lucir la mentalidad ganadora de CR7. ¡Consíguela antes de que se agote! 🏆</p>
+<p>Ideal para regalo o para llevar contigo una fragancia con identidad propia. ¡Consíguelo antes de que se agote! 🏆</p>
 </div>
 
 <a
-href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Cristiano%20Ronaldo"
+href="https://wa.me/5363156903?text=Hola,%20estoy%20interesado%20en%20el%20perfume%20D%20HABANA"
 class="btn-whatsapp">
 
 🛒 Comprar por WhatsApp
@@ -512,32 +566,39 @@ class="btn-whatsapp">
 </div>
 </div>
 
-<div class="modal" id="modal">
-<span class="cerrar" onclick="cerrarModal()">×</span>
-<img id="imagenExpandida">
-</div>
+<!-- MODAL -->
 
+<div class="modal" id="modal">
+
+<span class="cerrar" onclick="cerrarModal()">
+×
+</span>
+
+<img id="imagenExpandida">
+
+</div>
+<!-- TE PUEDE INTERESAR-->
+ 
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="Pedri.html" class="item-relacionado">
-      <img src="Futbol/Pedri.jpg" class="img-skeleton">
-      <span>Pedri - España</span>
+    <a href="DHabanamujer.html" class="item-relacionado">
+      <img src="Perfumes/DeHabana/mujer5.png" class="img-skeleton">
+      <span>D Habana/Mujer</span>
     </a>
-    <a href="barcelona-lamineyamal.html" class="item-relacionado">
-      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
-      <span>Lamine Yamal - Barcelona</span>
+    <a href="gorra-toronto-cream.html" class="item-relacionado">
+      <img src="img/gorra3.jpg" class="img-skeleton">
+      <span>Gorra Toronto Cream</span>
     </a>
-    <a href="realmadrid-mbappe.html" class="item-relacionado">
-      <img src="Futbol/RealMadrid/mbappe-back.jpg" class="img-skeleton">
-      <span>Mbappé - Real Madrid</span>
+    <a href="gorra-toronto-limitada.html" class="item-relacionado">
+      <img src="img/gorra4.jpg" class="img-skeleton">
+      <span>Gorra Toronto Edición Limitada</span>
     </a>
   </div>
 </div>
-
 <footer>
 
-<h3>LYON LIFESTYLE</h3>
+<h3>LYON <span style="color:#D4AF37;">LIFESTYLE</span></h3>
 
 <p>
 Accesorios Deportivos • Gorras • Perfumes • Fitness
@@ -567,19 +628,27 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 <script>
 
 function irFoto(numero){
-document.getElementById("slider").scrollTo({
+
+document.getElementById("slider")
+.scrollTo({
 left: numero * window.innerWidth,
 behavior:"smooth"
 });
+
 }
 
 function expandir(src){
+
 document.getElementById("modal").style.display="flex";
+
 document.getElementById("imagenExpandida").src=src;
+
 }
 
 function cerrarModal(){
+
 document.getElementById("modal").style.display="none";
+
 }
 </script>
 

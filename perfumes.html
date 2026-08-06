@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Futbol jerseys</title>
+<title>Perfumes - LYON LifeStyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -73,23 +73,13 @@ border-radius:25px;
 font-size:16px;
 }
 
-/* Skeleton */
+/* Skeleton loading */
 .img-skeleton {
-  background: linear-gradient(
-    90deg,
-    #1a1a1a 25%,
-    #2a2a2a 50%,
-    #1a1a1a 75%
-  );
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
 }
-
-.img-cargada {
-  animation: none;
-  background: none;
-}
-
+.img-cargada { animation: none; background: none; }
 @keyframes skeleton-loading {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
@@ -108,6 +98,7 @@ font-size:16px;
   pointer-events: none;
 }
 
+/* Filtros */
 .filtros{
 display:flex;
 gap:8px;
@@ -133,23 +124,17 @@ color:white;
 border-color:#D4AF37;
 }
 
-/* CONTADOR */
+/* CONTADOR / BREADCRUMB */
 
 .breadcrumb{
+position:relative;
+z-index:1;
 padding:14px 20px 0;
 font-size:13px;
 color:#777;
 }
-
-.breadcrumb a{
-color:#111;
-text-decoration:none;
-font-weight:600;
-}
-
-.breadcrumb span{
-color:#999;
-}
+.breadcrumb a{ color:#111; text-decoration:none; font-weight:600; }
+.breadcrumb span{ color:#999; }
 
 .count-orden{
 display:flex;
@@ -168,19 +153,6 @@ background:white;
 color:#111;
 }
 
-.stock-bajo{
-position:absolute;
-bottom:10px;
-right:10px;
-background:#c0392b;
-color:white;
-padding:5px 10px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-z-index:2;
-}
-
 .count{
 padding:0;
 font-size:20px;
@@ -190,6 +162,8 @@ font-weight:bold;
 /* GRID */
 
 .products{
+position:relative;
+z-index:1;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
@@ -197,7 +171,6 @@ padding:10px;
 }
 
 @media(min-width:900px){
-
 .products{
 grid-template-columns:repeat(4,1fr);
 }
@@ -241,6 +214,19 @@ font-weight:bold;
 z-index:2;
 }
 
+.stock-bajo{
+position:absolute;
+bottom:10px;
+right:10px;
+background:#c0392b;
+color:white;
+padding:5px 10px;
+border-radius:5px;
+font-size:11px;
+font-weight:bold;
+z-index:2;
+}
+
 .info{
 padding:10px 5px;
 }
@@ -261,12 +247,6 @@ margin-bottom:8px;
 font-size:24px;
 font-weight:bold;
 }
-
-.talla{
-  font-size:24px;
-  font-weight:bold;
-}
-
 
 /* FOOTER */
 
@@ -361,7 +341,7 @@ stroke-linejoin="round"/>
 
 <div class="title">
 <div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
-<div class="categoria-header">Fútbol</div>
+<div class="categoria-header">Perfumes</div>
 </div>
 
 <a href="index.html" class="home-btn">
@@ -379,18 +359,15 @@ onkeyup="searchProducts()">
 
 <div class="filtros">
   <button class="filtro-chip activo" onclick="filtrarPor('todos', this)">Todos</button>
-  <button class="filtro-chip" onclick="filtrarPor('real madrid', this)">Real Madrid</button>
-  <button class="filtro-chip" onclick="filtrarPor('barcelona', this)">Barcelona</button>
-  <button class="filtro-chip" onclick="filtrarPor('bayern', this)">Bayern</button>
-  <button class="filtro-chip" onclick="filtrarPor('españa', this)">España</button>
   <button class="filtro-chip" onclick="filtrarPor('exclusive', this)">Exclusivos</button>
   <button class="filtro-chip" onclick="filtrarPor('off', this)">En oferta</button>
+  <!-- Agrega más chips de filtro aquí si los necesitas, ej: <button class="filtro-chip" onclick="filtrarPor('palabra', this)">Nombre</button> -->
 </div>
 
 </header>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <span>Fútbol</span>
+  <a href="index.html">Inicio</a> › <span>Perfumes</span>
 </nav>
 
 <div class="count-orden">
@@ -406,8 +383,16 @@ onkeyup="searchProducts()">
 
 <!-- ======================================================
      SECCIÓN DE PRODUCTOS
+     Cada tarjeta .card es un producto. Para agregar uno nuevo,
+     copia un bloque completo <div class="card">...</div> y pega
+     debajo, cambiando: la foto, la marca, el nombre, el precio,
+     el link (onclick) y el precio en data-precio.
+     ====================================================== -->
+
+<!-- ======================================================
+     SECCIÓN DE PRODUCTOS
      No se editan tarjetas a mano acá. Las tarjetas se arman solas
-     leyendo productos.js, filtrando por categoria = "futbol".
+     leyendo productos.js, filtrando por categoria = "perfumes".
      Para agregar/quitar un producto de esta página, se edita el
      bloque de esa página de producto (categoria, precio, etc.) y
      se vuelve a correr generar_catalogo.py.
@@ -450,7 +435,7 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
 <script>
 
 // Categoria que le corresponde a esta pagina
-const CATEGORIA_PAGINA = "futbol";
+const CATEGORIA_PAGINA = "perfumes";
 
 function renderProductos(){
   const grid = document.getElementById('gridProductos');
@@ -463,7 +448,7 @@ function renderProductos(){
   const items = productos.filter(p => p.categoria === CATEGORIA_PAGINA);
 
   if(items.length === 0){
-    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria = "futbol")</p>';
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:20px;color:#777;">No hay productos en esta categoría todavía. (productos.js cargó bien, tiene ' + productos.length + ' producto(s), pero ninguno tiene categoria = "perfumes")</p>';
     actualizarContador();
     return;
   }

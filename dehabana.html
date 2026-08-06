@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristiano Ronaldo - Real Madrid - Lyon Lifestyle</title>
+<title>D Habana - Set Hombre y Mujer - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -120,7 +120,7 @@ cursor:pointer;
 display:flex;
 overflow-x:auto;
 gap:8px;
-padding:8px 10px 24px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -138,10 +138,6 @@ cursor:pointer;
 
 .info{
 padding:10px 20px 20px;
-}
-
-.titulo-precio-top{
-padding:14px 20px 0;
 }
 
 .modelo{
@@ -163,18 +159,17 @@ text-align:center;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-justify-content:center;
 margin-bottom:8px;
 }
 
 .talla{
-min-width:64px;
-padding:15px 26px;
+min-width:54px;
+padding:12px 22px;
 background:#111;
 color:#D4AF37;
 border:1px solid #D4AF37;
 border-radius:24px;
-font-size:19px;
+font-size:16px;
 font-weight:bold;
 text-align:center;
 cursor:pointer;
@@ -183,8 +178,7 @@ cursor:pointer;
 .info-tallas{
 font-size:12px;
 color:#888;
-text-align:center;
-margin-bottom:45px;
+margin-bottom:20px;
 }
 
 .titulo-seccion{
@@ -195,11 +189,6 @@ color:#D4AF37;
 text-transform:uppercase;
 margin-bottom:12px;
 text-align:center;
-}
-
-.info > .titulo-seccion:first-child{
-margin-top:15px;
-font-size:17px;
 }
 
 .descripcion{
@@ -301,6 +290,7 @@ transform:scale(1.02);
 
 @media (min-width:992px){
 .producto-pc{display:flex;gap:50px;max-width:1400px;margin:40px auto;align-items:flex-start;padding:0 30px;}
+.titulo-precio-top{max-width:1400px;margin:20px auto 0;padding:0 30px;}
 .galeria{flex:1;position:sticky;top:90px;}
 .info{flex:1;padding:0;}
 .slide{background:#f5f5f5;border-radius:12px;}
@@ -425,7 +415,7 @@ transform:scale(1.1);
 
 <div class="header">
 
-<a href="Futbol.html" class="back">
+<a href="Perfumes.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
 stroke="white"
@@ -438,7 +428,7 @@ stroke-linejoin="round"/>
 <div class="titulo">
 <div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
 <div class="producto-header">
-Real Madrid
+D Habana
 </div>
 </div>
 
@@ -447,69 +437,86 @@ Real Madrid
 </div>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <a href="Futbol.html">Fútbol</a> › <span>CR7</span>
+  <a href="index.html">Inicio</a> › <a href="Perfumes.html">Perfumes</a> › <span>D Habana - Set</span>
 </nav>
 
 <div class="titulo-precio-top">
 <div class="modelo">
-Cristiano Ronaldo - "Black Panther" Edition
+D HABANA - Set Hombre y Mujer
 </div>
 
 <div class="precio">
-$20.00
+$40.00
 </div>
 </div>
+
+<!-- BLOQUE DE DATOS DEL PRODUCTO — editar precio arriba Y precio aquí abajo, juntos -->
+<script type="application/ld+json">
+{
+  "id": "dhabana-set",
+  "nombre": "D HABANA - Set Hombre y Mujer",
+  "categoria": "combo",
+  "precio": 40,
+  "precio_anterior": null,
+  "moneda": "USD",
+  "imagen": "Combos/DeHabana1.png",
+  "url": "dehabana.html",
+  "nuevo": false,
+  "fecha_agregado": "2026-06-15"
+}
+</script>
 
 <div class="producto-pc">
 <div class="galeria">
 <div class="slider" id="slider">
 <div class="slide">
-<img src="Cr7.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Combos/DeHabana1.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Futbol/cr7negraespalda.jpg" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Combos/DeHabana3.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Combos/DeHabana.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 </div>
+
+<br>
 
 <div class="miniaturas">
-<img src="Cr7.png" onclick="irFoto(0)">
-<img src="Futbol/cr7negraespalda.jpg" onclick="irFoto(1)">
+<img src="Combos/DeHabana1.png" onclick="irFoto(0)">
+<img src="Combos/DeHabana3.png" onclick="irFoto(1)">
+<img src="Combos/DeHabana.png" onclick="irFoto(2)">
+</div>
 </div>
 
 </div>
+
+<br>
+
 <div class="info">
-
-<div class="titulo-seccion">Tallas disponibles</div>
-
-<div class="tallas">
-<div class="talla">S</div>
-<div class="talla">M</div>
-<div class="talla">L</div>
-<div class="talla">XL</div>
-</div>
-<p class="info-tallas">Consulta disponibilidad exacta por WhatsApp antes de comprar.</p>
 
 <div class="descripcion">
 <div class="titulo-seccion">Descripción del producto</div>
-<p class="gancho">El legado de un ícono 🇵🇹</p>
-<p>Cristiano Ronaldo no solo hizo historia en la cancha, se convirtió en un símbolo de disciplina y ambición dentro y fuera del fútbol. Esta edición especial "Black Panther" celebra ese legado con un diseño oscuro y elegante, digno de CR7.</p>
+<p class="gancho">La pareja perfecta: él y ella, un mismo estilo 🥂</p>
+<p>D Habana nació para conmemorar el 500.º aniversario de la fundación de la Villa de San Cristóbal de La Habana, con la Giraldilla —símbolo de la ciudad— coronando cada frasco. Este set reúne el Eau de Parfum para mujer y el Eau de Toilette para hombre (80 ml), dos fragancias que comparten una misma identidad y una misma historia.</p>
+<p>Perfecta para regalar en pareja o para quienes quieren llevar, cada uno a su manera, ese mismo carácter habanero.</p>
 <ul class="lista-beneficios">
-<li>Material premium, transpirable y de larga duración</li>
-<li>Ajuste cómodo, ideal para el día a día o para el estadio</li>
-<li>Edición especial "Black Panther" con detalles exclusivos</li>
+<li>Incluye Eau de Parfum Mujer + Eau de Toilette Hombre 80 ml</li>
+<li>Fragancia con acordes chipre-florales, elegante y duradera</li>
+<li>Diseño inspirado en La Habana, con la Giraldilla en cada frasco</li>
+<li>Presentación en estuche a juego, ideal para regalo</li>
 </ul>
-<p>Ideal para regalo o para lucir la mentalidad ganadora de CR7. ¡Consíguela antes de que se agote! 🏆</p>
+<p>Dos fragancias que hablan de ti. ¡Consigue el set completo antes de que se agote! 🏆</p>
 </div>
 
 <a
-href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Cristiano%20Ronaldo"
+href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20el%20set%20D%20Habana%20(Hombre%20y%20Mujer)"
 class="btn-whatsapp">
 
 🛒 Comprar por WhatsApp
 
 </a>
 
-</div>
 </div>
 
 <div class="modal" id="modal">
@@ -520,24 +527,20 @@ class="btn-whatsapp">
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="Pedri.html" class="item-relacionado">
-      <img src="Futbol/Pedri.jpg" class="img-skeleton">
-      <span>Pedri - España</span>
+    <a href="DHabanamujer.html" class="item-relacionado">
+      <img src="Perfumes/DeHabana/mujer.png" class="img-skeleton">
+      <span>D Habana - Mujer</span>
     </a>
-    <a href="barcelona-lamineyamal.html" class="item-relacionado">
-      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
-      <span>Lamine Yamal - Barcelona</span>
-    </a>
-    <a href="realmadrid-mbappe.html" class="item-relacionado">
-      <img src="Futbol/RealMadrid/mbappe-back.jpg" class="img-skeleton">
-      <span>Mbappé - Real Madrid</span>
+    <a href="DHabanahombre.html" class="item-relacionado">
+      <img src="Perfumes/DeHabana/hombre2.png" class="img-skeleton">
+      <span>D Habana - Hombre</span>
     </a>
   </div>
 </div>
 
 <footer>
 
-<h3>LYON LIFESTYLE</h3>
+<h3>LYON <span style="color:#D4AF37;">LIFESTYLE</span></h3>
 
 <p>
 Accesorios Deportivos • Gorras • Perfumes • Fitness

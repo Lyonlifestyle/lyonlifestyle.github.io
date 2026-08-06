@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristiano Ronaldo - Real Madrid - Lyon Lifestyle</title>
+<title>Mariano Rivera - New York Yankees - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -34,7 +34,7 @@ font-family:Arial,sans-serif;
   height: 70vh;
   width: auto;
   opacity: 0.15;
-  z-index: 5;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -51,13 +51,13 @@ font-family:Arial,sans-serif;
 .header{
 position:sticky;
 top:0;
-background:#111;
+background:#fff;
 height:70px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 15px;
-border-bottom:1px solid #D4AF37;
+border-bottom:1px solid #ddd;
 z-index:1000;
 }
 
@@ -65,7 +65,7 @@ z-index:1000;
 .search{
 font-size:28px;
 text-decoration:none;
-color:#fff;
+color:black;
 }
 
 .titulo{
@@ -76,16 +76,11 @@ flex:1;
 .tienda{
 font-size:22px;
 font-weight:bold;
-color:#fff;
-}
-
-.tienda .dorado{
-color:#D4AF37;
 }
 
 .producto-header{
 font-size:13px;
-color:#ccc;
+color:#666;
 }
 
 .slider{
@@ -120,7 +115,7 @@ cursor:pointer;
 display:flex;
 overflow-x:auto;
 gap:8px;
-padding:8px 10px 24px;
+padding:8px 10px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -149,108 +144,31 @@ font-size:22px;
 font-weight:bold;
 margin-bottom:6px;
 margin-top:4px;
-text-align:center;
 }
 
 .precio{
 font-size:22px;
 font-weight:bold;
 margin-bottom:12px;
-text-align:center;
 }
 
 .tallas{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-justify-content:center;
-margin-bottom:8px;
+margin-bottom:20px;
 }
 
 .talla{
-min-width:64px;
-padding:15px 26px;
-background:#111;
-color:#D4AF37;
-border:1px solid #D4AF37;
-border-radius:24px;
-font-size:19px;
-font-weight:bold;
-text-align:center;
+padding:10px 20px;
+border:1px solid #000;
+border-radius:5px;
 cursor:pointer;
 }
 
-.info-tallas{
-font-size:12px;
-color:#888;
-text-align:center;
-margin-bottom:45px;
-}
-
-.titulo-seccion{
-font-size:13px;
-font-weight:bold;
-letter-spacing:1px;
-color:#D4AF37;
-text-transform:uppercase;
-margin-bottom:12px;
-text-align:center;
-}
-
-.info > .titulo-seccion:first-child{
-margin-top:15px;
-font-size:17px;
-}
-
 .descripcion{
-background:#fafafa;
-border:1px solid #eee;
-border-left:3px solid #D4AF37;
-border-radius:8px;
-padding:18px 20px;
 line-height:1.6;
 color:#555;
-margin-bottom:25px;
-}
-
-.descripcion .titulo-seccion{
-font-size:17px;
-margin-bottom:14px;
-}
-
-.descripcion .gancho{
-font-size:20px;
-font-weight:bold;
-color:#111;
-text-align:center;
-margin-bottom:10px;
-}
-
-.descripcion p{
-margin-bottom:10px;
-}
-
-.descripcion p:last-child{
-margin-bottom:0;
-}
-
-.lista-beneficios{
-list-style:none;
-margin-bottom:10px;
-}
-
-.lista-beneficios li{
-position:relative;
-padding-left:22px;
-margin-bottom:6px;
-}
-
-.lista-beneficios li::before{
-content:"✓";
-position:absolute;
-left:0;
-color:#D4AF37;
-font-weight:bold;
 }
 
 .modal{
@@ -425,10 +343,10 @@ transform:scale(1.1);
 
 <div class="header">
 
-<a href="Futbol.html" class="back">
+<a href="Pag1.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
-stroke="white"
+stroke="black"
 stroke-width="2.5"
 stroke-linecap="round"
 stroke-linejoin="round"/>
@@ -436,9 +354,9 @@ stroke-linejoin="round"/>
 </a>
 
 <div class="titulo">
-<div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
+<div class="tienda">LYON LIFESTYLE</div>
 <div class="producto-header">
-Real Madrid
+New York Yankees
 </div>
 </div>
 
@@ -447,39 +365,63 @@ Real Madrid
 </div>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <a href="Futbol.html">Fútbol</a> › <span>CR7</span>
+  <a href="index.html">Inicio</a> › <a href="Pag1.html">Béisbol</a> › <span>Mariano Rivera</span>
 </nav>
 
 <div class="titulo-precio-top">
 <div class="modelo">
-Cristiano Ronaldo - "Black Panther" Edition
+New York Yankees - Mariano Rivera #42
 </div>
 
 <div class="precio">
-$20.00
+$40.00
 </div>
 </div>
+
+<!-- BLOQUE DE DATOS DEL PRODUCTO — editar precio arriba Y precio aquí abajo, juntos -->
+<script type="application/ld+json">
+{
+  "id": "mariano-rivera",
+  "nombre": "New York Yankees - Mariano Rivera #42",
+  "categoria": "beisbol",
+  "precio": 40,
+  "precio_anterior": null,
+  "moneda": "USD",
+  "imagen": "Beisbol/Mariano/mariano42.png",
+  "url": "Mariano.html",
+  "nuevo": false,
+  "fecha_agregado": "2026-06-15"
+}
+</script>
 
 <div class="producto-pc">
 <div class="galeria">
 <div class="slider" id="slider">
 <div class="slide">
-<img src="Cr7.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Beisbol/Mariano/mariano42.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Futbol/cr7negraespalda.jpg" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Beisbol/Mariano/mariano.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Beisbol/Mariano/majesticmanga.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Beisbol/Mariano/majesticparche.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 </div>
 
 <div class="miniaturas">
-<img src="Cr7.png" onclick="irFoto(0)">
-<img src="Futbol/cr7negraespalda.jpg" onclick="irFoto(1)">
+<img src="Beisbol/Mariano/mariano42.png" onclick="irFoto(0)">
+<img src="Beisbol/Mariano/mariano.png" onclick="irFoto(1)">
+<img src="Beisbol/Mariano/majesticmanga.png" onclick="irFoto(2)">
+<img src="Beisbol/Mariano/majesticparche.png" onclick="irFoto(3)">
 </div>
 
 </div>
 <div class="info">
 
-<div class="titulo-seccion">Tallas disponibles</div>
+<h3>Tallas</h3>
 
 <div class="tallas">
 <div class="talla">S</div>
@@ -487,27 +429,18 @@ $20.00
 <div class="talla">L</div>
 <div class="talla">XL</div>
 </div>
-<p class="info-tallas">Consulta disponibilidad exacta por WhatsApp antes de comprar.</p>
-
-<div class="descripcion">
-<div class="titulo-seccion">Descripción del producto</div>
-<p class="gancho">El legado de un ícono 🇵🇹</p>
-<p>Cristiano Ronaldo no solo hizo historia en la cancha, se convirtió en un símbolo de disciplina y ambición dentro y fuera del fútbol. Esta edición especial "Black Panther" celebra ese legado con un diseño oscuro y elegante, digno de CR7.</p>
-<ul class="lista-beneficios">
-<li>Material premium, transpirable y de larga duración</li>
-<li>Ajuste cómodo, ideal para el día a día o para el estadio</li>
-<li>Edición especial "Black Panther" con detalles exclusivos</li>
-</ul>
-<p>Ideal para regalo o para lucir la mentalidad ganadora de CR7. ¡Consíguela antes de que se agote! 🏆</p>
-</div>
 
 <a
-href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Cristiano%20Ronaldo"
+href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20la%20camiseta%20de%20Mariano%20Rivera%20Yankees"
 class="btn-whatsapp">
 
 🛒 Comprar por WhatsApp
 
 </a>
+
+<div class="descripcion">
+Camiseta oficial estilo New York Yankees, versión Mariano Rivera #42, Majestic. Material premium, ajuste cómodo y diseño urbano ideal para uso diario.
+</div>
 
 </div>
 </div>
@@ -520,17 +453,17 @@ class="btn-whatsapp">
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
-    <a href="Pedri.html" class="item-relacionado">
-      <img src="Futbol/Pedri.jpg" class="img-skeleton">
-      <span>Pedri - España</span>
+    <a href="Pag2PC.html" class="item-relacionado">
+      <img src="Beisbol/Toronto.jpg" class="img-skeleton">
+      <span>Camisa Toronto Blue Jays</span>
     </a>
-    <a href="barcelona-lamineyamal.html" class="item-relacionado">
-      <img src="Futbol/Barcelona/lamineyamal-back.jpg" class="img-skeleton">
-      <span>Lamine Yamal - Barcelona</span>
+    <a href="gorra-toronto-mesh.html" class="item-relacionado">
+      <img src="img/gorra2.jpg" class="img-skeleton">
+      <span>Gorra Toronto Mesh</span>
     </a>
-    <a href="realmadrid-mbappe.html" class="item-relacionado">
-      <img src="Futbol/RealMadrid/mbappe-back.jpg" class="img-skeleton">
-      <span>Mbappé - Real Madrid</span>
+    <a href="gorra-toronto-cream.html" class="item-relacionado">
+      <img src="img/gorra3.jpg" class="img-skeleton">
+      <span>Gorra Toronto Cream</span>
     </a>
   </div>
 </div>
@@ -547,6 +480,7 @@ Accesorios Deportivos • Gorras • Perfumes • Fitness
   <a href="envios.html">Envíos</a>
   <a href="cambios.html">Cambios y devoluciones</a>
   <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+  <a href="guia-tallashtml">Guía de tallas</a>
 </div>
 
 <div class="footer-redes">

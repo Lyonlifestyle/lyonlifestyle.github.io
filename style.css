@@ -1,0 +1,146 @@
+
+/* Fade-in al cargar cada página */
+body {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Skeleton loading para imágenes */
+.img-skeleton {
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #2a2a2a 50%,
+    #1a1a1a 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.img-cargada {
+  animation: none;
+  background: none;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Brillo dorado en botones al interactuar 
+.card,
+.circle,
+button,
+.btn {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.circle:hover,
+button:hover,
+.btn:hover {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+.card:active,
+.circle:active,
+button:active,
+.btn:active {
+  transform: translateY(0);
+} */
+
+
+/* Botón flotante de WhatsApp */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1);
+}
+
+/* Hover con zoom en productos */
+.card img,
+.circle img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img,
+.circle:hover img {
+  transform: scale(1.05);
+}
+
+/* Breadcrumb de navegación */
+/*.breadcrumb {
+  padding: 12px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+.breadcrumb a {
+  color: #D4AF37;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #ffffff;
+}
+
+*/
+/* Espaciado entre secciones principales */
+.hero-banner,
+.categorias,
+.beneficios,
+.relacionados,
+.testimonios {
+  margin-bottom: 40px;
+}
+
+/* Más espacio en pantallas grandes */
+@media (min-width: 768px) {
+  .hero-banner,
+  .categorias,
+  .beneficios,
+  .relacionados,
+  .testimonios {
+    margin-bottom: 60px;
+  }
+}
+/* Placeholder de carga con el logo del sitio */
+.img-skeleton {
+  background-color: #f0f0f0 !important;
+  background-image: url('logo-leon-gris.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 35% auto !important;
+  animation: none !important;
+}
+
+.img-cargada {
+  background-image: none !important;
+  background-color: transparent !important;
+}
