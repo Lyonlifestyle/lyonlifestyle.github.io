@@ -334,5 +334,6 @@ const productos = [
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
     "en_oferta": false
-  }
+  },
+   //===== CUIDADO PERSONAL =====
 ];
