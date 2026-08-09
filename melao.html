@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D Habana - Set Hombre y Mujer - Lyon Lifestyle</title>
+<title>Melao - Desodorante - Lyon Lifestyle</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -120,7 +120,7 @@ cursor:pointer;
 display:flex;
 overflow-x:auto;
 gap:8px;
-padding:8px 10px;
+padding:8px 10px 24px;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -140,11 +140,16 @@ cursor:pointer;
 padding:10px 20px 20px;
 }
 
+.titulo-precio-top{
+padding:14px 20px 0;
+}
+
 .modelo{
 font-size:22px;
 font-weight:bold;
 margin-bottom:6px;
 margin-top:4px;
+
 text-align:center;
 }
 
@@ -152,6 +157,7 @@ text-align:center;
 font-size:22px;
 font-weight:bold;
 margin-bottom:12px;
+
 text-align:center;
 }
 
@@ -159,17 +165,18 @@ text-align:center;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
+justify-content:center;
 margin-bottom:8px;
 }
 
 .talla{
-min-width:54px;
-padding:12px 22px;
+min-width:64px;
+padding:15px 26px;
 background:#111;
 color:#D4AF37;
 border:1px solid #D4AF37;
 border-radius:24px;
-font-size:16px;
+font-size:19px;
 font-weight:bold;
 text-align:center;
 cursor:pointer;
@@ -178,7 +185,8 @@ cursor:pointer;
 .info-tallas{
 font-size:12px;
 color:#888;
-margin-bottom:20px;
+text-align:center;
+margin-bottom:45px;
 }
 
 .titulo-seccion{
@@ -189,6 +197,11 @@ color:#D4AF37;
 text-transform:uppercase;
 margin-bottom:12px;
 text-align:center;
+}
+
+.info > .titulo-seccion:first-child{
+margin-top:15px;
+font-size:17px;
 }
 
 .descripcion{
@@ -415,7 +428,7 @@ transform:scale(1.1);
 
 <div class="header">
 
-<a href="Perfumes.html" class="back">
+<a href="gorras.html" class="back">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
 <path d="M15 18L9 12L15 6"
 stroke="white"
@@ -428,7 +441,7 @@ stroke-linejoin="round"/>
 <div class="titulo">
 <div class="tienda">LYON <span class="dorado">LIFESTYLE</span></div>
 <div class="producto-header">
-D Habana
+Melao
 </div>
 </div>
 
@@ -437,32 +450,32 @@ D Habana
 </div>
 
 <nav class="breadcrumb">
-  <a href="index.html">Inicio</a> › <a href="Perfumes.html">Perfumes</a> › <span>D Habana - Set</span>
+  <a href="index.html">Inicio</a> › <a href="cuidado.html">Cuidado</a> › <span>Melao</span>
 </nav>
 
 <div class="titulo-precio-top">
 <div class="modelo">
-D HABANA - Set Hombre y Mujer
+Melao - Desodorante
 </div>
 
 <div class="precio">
-$40.00
+500 CUP
 </div>
 </div>
 
 <!-- BLOQUE DE DATOS DEL PRODUCTO — editar precio arriba Y precio aquí abajo, juntos -->
 <script type="application/ld+json">
 {
-  "id": "dhabana-set",
-  "nombre": "D HABANA - Set Hombre y Mujer",
-  "categoria": "combos",
-  "precio": 40,
+  "id": "melao-desodorante",
+  "nombre": "Melao - Desodorante",
+  "categoria": "cuidado",
+  "precio": 500,
   "precio_anterior": null,
-  "moneda": "USD",
-  "imagen": "Combos/DeHabana1.png",
-  "url": "dehabana.html",
-  "nuevo": false,
-  "fecha_agregado": "2026-06-15"
+  "moneda": "CUP",
+  "imagen": "Cuidado/Melao.png",
+  "url": "Melao.html",
+  "nuevo": true,
+  "fecha_agregado": "2026-08-07"
 }
 </script>
 
@@ -470,53 +483,54 @@ $40.00
 <div class="galeria">
 <div class="slider" id="slider">
 <div class="slide">
-<img src="Combos/DeHabana1.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Cuidado/Melao.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Combos/DeHabana3.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Cuidado/Melao1.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 <div class="slide">
-<img src="Combos/DeHabana.png" class="img-skeleton" onclick="expandir(this.src)">
+<img src="Cuidado/Melao2.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Cuidado/Melao3.png" class="img-skeleton" onclick="expandir(this.src)">
+</div>
+<div class="slide">
+<img src="Cuidado/Melao4.png" class="img-skeleton" onclick="expandir(this.src)">
 </div>
 </div>
-
-<br>
 
 <div class="miniaturas">
-<img src="Combos/DeHabana1.png" onclick="irFoto(0)">
-<img src="Combos/DeHabana3.png" onclick="irFoto(1)">
-<img src="Combos/DeHabana.png" onclick="irFoto(2)">
-</div>
+<img src="Cuidado/Melao.png" onclick="irFoto(0)">
+<img src="Cuidado/Melao1.png" onclick="irFoto(1)">
+<img src="Cuidado/Melao2.png" onclick="irFoto(2)">
+<img src="Cuidado/Melao3.png" onclick="irFoto(3)">
+<img src="Cuidado/Melao4.png" onclick="irFoto(4)">
 </div>
 
 </div>
-
-<br>
-
 <div class="info">
 
 <div class="descripcion">
 <div class="titulo-seccion">Descripción del producto</div>
-<p class="gancho">La pareja perfecta: él y ella, un mismo estilo 🥂</p>
-<p>D Habana nació para conmemorar el 500.º aniversario de la fundación de la Villa de San Cristóbal de La Habana, con la Giraldilla —símbolo de la ciudad— coronando cada frasco. Este set reúne el Eau de Parfum para mujer y el Eau de Toilette para hombre (80 ml), dos fragancias que comparten una misma identidad y una misma historia.</p>
-<p>Perfecta para regalar en pareja o para quienes quieren llevar, cada uno a su manera, ese mismo carácter habanero.</p>
+<p class="gancho">Frescura que cabe en tu cartera💧</p>
+<p>Melao es un desodorante en frasco pequeño, pensado para que lo lleves siempre contigo: en la cartera, la mochila o el bolso de mano. Ideal para retocarte en cualquier momento del día, sin ocupar espacio ni pesar de más.</p>
 <ul class="lista-beneficios">
-<li>Incluye Eau de Parfum Mujer + Eau de Toilette Hombre 80 ml</li>
-<li>Fragancia con acordes chipre-florales, elegante y duradera</li>
-<li>Diseño inspirado en La Habana, con la Giraldilla en cada frasco</li>
-<li>Presentación en estuche a juego, ideal para regalo</li>
+<li>Tamaño compacto y portátil, perfecto para llevar en la cartera</li>
+<li>Fórmula de larga duración</li>
+<li>Aroma dulce y agradable, ideal para uso diario</li>
 </ul>
-<p>Dos fragancias que hablan de ti. ¡Consigue el set completo antes de que se agote! 🏆</p>
+<p>Ideal para tener siempre a mano y sentirte fresca todo el día. ¡Consíguelo antes de que se agote! 🌸</p>
 </div>
 
 <a
-href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20el%20set%20D%20Habana%20(Hombre%20y%20Mujer)"
+href="https://wa.me/5363156903?text=Hola%2C%20estoy%20interesado%20en%20el%20desodorante%20Melao"
 class="btn-whatsapp">
 
 🛒 Comprar por WhatsApp
 
 </a>
 
+</div>
 </div>
 
 <div class="modal" id="modal">
@@ -527,13 +541,17 @@ class="btn-whatsapp">
 <div class="relacionados">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
+    <a href="DHabanahombre.html" class="item-relacionado">
+      <img src="Perfumes/DeHabana/hombre.png" class="img-skeleton">
+      <span>D Habana - Hombre</span>
+    </a>
     <a href="DHabanamujer.html" class="item-relacionado">
       <img src="Perfumes/DeHabana/mujer.png" class="img-skeleton">
       <span>D Habana - Mujer</span>
     </a>
-    <a href="DHabanahombre.html" class="item-relacionado">
-      <img src="Perfumes/DeHabana/hombre2.png" class="img-skeleton">
-      <span>D Habana - Hombre</span>
+    <a href="dehabana.html" class="item-relacionado">
+      <img src="Combos/DeHabana1.png" class="img-skeleton">
+      <span>D Habana - Set</span>
     </a>
   </div>
 </div>
