@@ -1,8 +1,22 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-06 05:08
+// Última actualización: 2026-08-09 14:33
 // Organizado por categoría para mayor claridad
 const productos = [
   // ===== FÚTBOL =====
+  {
+    "id": "alnassr-cr7",
+    "nombre": "Al Nassr - Cristiano Ronaldo #7",
+    "categoria": "futbol",
+    "precio": 18,
+    "precio_anterior": 20,
+    "moneda": "USD",
+    "imagen": "Futbol/Cr7alhh.png",
+    "url": "Cr7al.html",
+    "nuevo": true,
+    "fecha_agregado": "2026-08-07",
+    "es_novedad": true,
+    "en_oferta": true
+  },
   {
     "id": "barcelona-lamineyamal",
     "nombre": "FC Barcelona - Lamine Yamal #10",
@@ -44,6 +58,20 @@ const productos = [
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
     "en_oferta": false
+  },
+  {
+    "id": "francia-mbappe",
+    "nombre": "Francia - Mbappé #10",
+    "categoria": "futbol",
+    "precio": 18,
+    "precio_anterior": 20,
+    "moneda": "USD",
+    "imagen": "Futbol/Mbappe/mbappe.png",
+    "url": "Mbappe.html",
+    "nuevo": true,
+    "fecha_agregado": "2026-08-07",
+    "es_novedad": true,
+    "en_oferta": true
   },
   {
     "id": "lamine-barcelona",
@@ -142,6 +170,20 @@ const productos = [
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
     "en_oferta": false
+  },
+  {
+    "id": "santos-neymar",
+    "nombre": "Santos - Neymar #10",
+    "categoria": "futbol",
+    "precio": 18,
+    "precio_anterior": 20,
+    "moneda": "USD",
+    "imagen": "Futbol/Santos/neymar.png",
+    "url": "Ney.html",
+    "nuevo": true,
+    "fecha_agregado": "2026-08-07",
+    "es_novedad": true,
+    "en_oferta": true
   },
 
   // ===== BÉISBOL =====
@@ -335,5 +377,20 @@ const productos = [
     "es_novedad": false,
     "en_oferta": false
   },
-   //===== CUIDADO PERSONAL =====
+
+  // ===== CUIDADO =====
+  {
+    "id": "melao-desodorante",
+    "nombre": "Melao - Desodorante",
+    "categoria": "cuidado",
+    "precio": 500,
+    "precio_anterior": null,
+    "moneda": "CUP",
+    "imagen": "Cuidado/Melao.png",
+    "url": "Melao.html",
+    "nuevo": true,
+    "fecha_agregado": "2026-08-07",
+    "es_novedad": true,
+    "en_oferta": false
+  }
 ];
