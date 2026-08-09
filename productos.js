@@ -1,5 +1,5 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-09 14:33
+// Última actualización: 2026-08-09 15:02
 // Organizado por categoría para mayor claridad
 const productos = [
   // ===== FÚTBOL =====
@@ -383,9 +383,9 @@ const productos = [
     "id": "melao-desodorante",
     "nombre": "Melao - Desodorante",
     "categoria": "cuidado",
-    "precio": 500,
+    "precio": 0.7,
     "precio_anterior": null,
-    "moneda": "CUP",
+    "moneda": "USD",
     "imagen": "Cuidado/Melao.png",
     "url": "Melao.html",
     "nuevo": true,
