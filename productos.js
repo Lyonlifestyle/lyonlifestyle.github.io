@@ -1,5 +1,5 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-30 02:37
+// Última actualización: 2026-08-30 03:03
 // Organizado por categoría para mayor claridad
 const productos = [
   // ===== FÚTBOL =====
