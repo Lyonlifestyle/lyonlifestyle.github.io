@@ -121,6 +121,7 @@ display:flex;
 overflow-x:auto;
 gap:8px;
 padding:8px 10px 24px;
+justify-content:center;
 }
 
 .miniaturas::-webkit-scrollbar{
@@ -301,18 +302,23 @@ transition:0.3s;
 transform:scale(1.02);
 }
 
+.relacionados-desktop{display:none;}
+
 @media (min-width:992px){
-.producto-pc{display:flex;gap:50px;max-width:1400px;margin:40px auto;align-items:flex-start;padding:0 30px;}
-.titulo-precio-top{max-width:1400px;margin:20px auto 0;padding:0 30px;}
+.producto-pc{display:flex;gap:50px;max-width:1300px;margin:20px auto;align-items:flex-start;padding:0 30px;}
+.titulo-precio-top{max-width:1300px;margin:15px auto 0;padding:0 30px;}
 .galeria{flex:1;position:sticky;top:90px;}
 .info{flex:1;padding:0;}
 .slide{background:#f5f5f5;border-radius:12px;}
-.slide img{width:100%;max-width:700px;max-height:700px;object-fit:contain;}
+.slide img{width:100%;max-width:420px;max-height:420px;object-fit:contain;}
 .miniaturas{justify-content:center;}
-.modelo{font-size:34px;}
-.precio{font-size:32px;}
+.modelo{font-size:30px;}
+.precio{font-size:26px;}
 .btn-whatsapp{max-width:420px;}
+.relacionados-mobile{display:none;}
+.relacionados-desktop{display:block;}
 }
+
 
 .relacionados {
   padding: 30px 20px;
@@ -533,6 +539,24 @@ class="btn-whatsapp">
 
 </a>
 
+<div class="relacionados relacionados-desktop">
+  <h3 class="titulo-relacionados">También te puede interesar</h3>
+  <div class="grid-relacionados">
+    <a href="Pag2PC.html" class="item-relacionado">
+      <img src="Beisbol/Toronto.jpg" class="img-skeleton">
+      <span>Camisa Toronto Blue Jays</span>
+    </a>
+    <a href="gorra-toronto-mesh.html" class="item-relacionado">
+      <img src="img/gorra2.jpg" class="img-skeleton">
+      <span>Gorra Toronto Mesh</span>
+    </a>
+    <a href="gorra-toronto-cream.html" class="item-relacionado">
+      <img src="img/gorra3.jpg" class="img-skeleton">
+      <span>Gorra Toronto Cream</span>
+    </a>
+  </div>
+</div>
+
 </div>
 </div>
 
@@ -541,7 +565,7 @@ class="btn-whatsapp">
 <img id="imagenExpandida">
 </div>
 
-<div class="relacionados">
+<div class="relacionados relacionados-mobile">
   <h3 class="titulo-relacionados">También te puede interesar</h3>
   <div class="grid-relacionados">
     <a href="Pag2PC.html" class="item-relacionado">
