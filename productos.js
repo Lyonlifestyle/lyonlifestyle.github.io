@@ -1,5 +1,5 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-30 03:03
+// Última actualización: 2026-08-30 03:51
 // Organizado por categoría para mayor claridad
 const productos = [
   // ===== FÚTBOL =====
@@ -74,6 +74,20 @@ const productos = [
     "en_oferta": true
   },
   {
+    "id": "intermiami-messi",
+    "nombre": "Inter Miami - Messi #10",
+    "categoria": "futbol",
+    "precio": 20,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Futbol/InterMiami/messi-front.jpg",
+    "url": "intermiami-messi.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-08-30",
+    "es_novedad": true,
+    "en_oferta": false
+  },
+  {
     "id": "lamine-barcelona",
     "nombre": "FC Barcelona Temporada 2025-2026 Lamine Yamal #10",
     "categoria": "futbol",
@@ -144,6 +158,34 @@ const productos = [
     "en_oferta": false
   },
   {
+    "id": "realmadrid-cucurella",
+    "nombre": "Real Madrid - Cucurella #17",
+    "categoria": "futbol",
+    "precio": 20,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Futbol/RealMadrid/cucurella-front.jpg",
+    "url": "realmadrid-cucurella.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-08-30",
+    "es_novedad": true,
+    "en_oferta": false
+  },
+  {
+    "id": "realmadrid-cucurella-alt",
+    "nombre": "Real Madrid - Cucurella #17 (Alternativa)",
+    "categoria": "futbol",
+    "precio": 20,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Futbol/RealMadrid/cucurella-alt-front.jpg",
+    "url": "realmadrid-cucurella-alt.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-08-30",
+    "es_novedad": true,
+    "en_oferta": false
+  },
+  {
     "id": "realmadrid-mbappe",
     "nombre": "Real Madrid - Mbappé #10",
     "categoria": "futbol",
@@ -169,6 +211,20 @@ const productos = [
     "nuevo": false,
     "fecha_agregado": "2026-06-15",
     "es_novedad": false,
+    "en_oferta": false
+  },
+  {
+    "id": "realmadrid-vinijr-alt",
+    "nombre": "Real Madrid - Vini Jr #7 (Alternativa)",
+    "categoria": "futbol",
+    "precio": 20,
+    "precio_anterior": null,
+    "moneda": "USD",
+    "imagen": "Futbol/RealMadrid/vinijr-alt-front.jpg",
+    "url": "realmadrid-vinijr-alt.html",
+    "nuevo": false,
+    "fecha_agregado": "2026-08-30",
+    "es_novedad": true,
     "en_oferta": false
   },
   {
