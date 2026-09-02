@@ -1,5 +1,5 @@
 // Generado automáticamente por generar_catalogo.py — no editar a mano
-// Última actualización: 2026-08-30 03:51
+// Última actualización: 2026-09-02 00:44
 // Organizado por categoría para mayor claridad
 const productos = [
   // ===== FÚTBOL =====
@@ -67,7 +67,7 @@ const productos = [
     "precio_anterior": 20,
     "moneda": "USD",
     "imagen": "Futbol/Mbappe/mbappe.png",
-    "url": "Mbappe.html",
+    "url": "mbappe.html",
     "nuevo": true,
     "fecha_agregado": "2026-08-07",
     "es_novedad": true,
@@ -80,8 +80,8 @@ const productos = [
     "precio": 20,
     "precio_anterior": null,
     "moneda": "USD",
-    "imagen": "Futbol/InterMiami/messi-front.jpg",
-    "url": "intermiami-messi.html",
+    "imagen": "Futbol/Messi/Messi.png",
+    "url": "Messi.html",
     "nuevo": false,
     "fecha_agregado": "2026-08-30",
     "es_novedad": true,
@@ -122,7 +122,7 @@ const productos = [
     "precio": 20,
     "precio_anterior": null,
     "moneda": "USD",
-    "imagen": "Futbol/Pedri.jpg",
+    "imagen": "Futbol/Pedriesp.png",
     "url": "Pedri.html",
     "nuevo": false,
     "fecha_agregado": "2026-06-15",
@@ -220,8 +220,8 @@ const productos = [
     "precio": 20,
     "precio_anterior": null,
     "moneda": "USD",
-    "imagen": "Futbol/RealMadrid/vinijr-alt-front.jpg",
-    "url": "realmadrid-vinijr-alt.html",
+    "imagen": "Futbol/RealMadrid/vinialt.png",
+    "url": "Altvinijr.html",
     "nuevo": false,
     "fecha_agregado": "2026-08-30",
     "es_novedad": true,
@@ -234,8 +234,8 @@ const productos = [
     "precio": 18,
     "precio_anterior": 20,
     "moneda": "USD",
-    "imagen": "Futbol/Santos/neymar.png",
-    "url": "Ney.html",
+    "imagen": "Futbol/Neymarsantos.png",
+    "url": "ney.html",
     "nuevo": true,
     "fecha_agregado": "2026-08-07",
     "es_novedad": true,
